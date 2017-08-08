@@ -15,6 +15,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="/Floracion/views/js/project/project_notice.js"></script>
 </head>
 
 <body>
@@ -89,7 +90,48 @@
 			</ul>
 
 			<div class="tab-content">
-				<div id="menu1" class="tab-pane fade in active">
+					<div id="menu1" class="tab-pane fade in active">
+					<h1>공지사항</h1>
+					<table class="table table-striped table-bordered table-hover">
+						<thead>
+							<tr>
+								<th width="10%">번호</th>
+								<th width="50%">제목</th>
+								<th width="10%">작성자</th>
+								<th width="20%">작성일</th>
+								<th width="10%">조회</th>
+							</tr>
+						</thead>
+						<tbody id="fuck">
+							<tr>
+								<td>1</td>
+								<td id="title">음란 광고 그만 올리세요. 경고합니다</td>
+								<td>운영자</td>
+								<td>17/02/03</td>
+								<td>21</td>
+							<tr>
+							<tr>
+								<td>2</td>
+								<td id="title">장난성 기부 전화 테러 오늘 저녁에 고발 조치 완료했습니다.</td>
+								<td>게시판지기</td>
+								<td>17/02/03</td>
+								<td>321</td>
+							<tr>
+							<tr>
+								<td>3</td>
+								<td id="title">오늘 KBS에서 방영된 전문 사기 프로젝트 단체 저희 아닙니다.</td>
+								<td>프로젝트 매니저</td>
+								<td>17/02/03</td>
+								<td>41</td>
+							<tr>
+						</tbody>
+					</table>
+				</div>
+				
+			
+			
+			
+				<div id="menu2" class="tab-pane fade">
 					<h1>자유게시판</h1>
 					<table class="table table-striped table-bordered table-hover">
 						<thead>
@@ -101,7 +143,7 @@
 								<th width="10%">조회</th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody >
 							<tr>
 								<td>1</td>
 								<td id="title">스타3 언제 발매하나요?</td>
@@ -128,44 +170,7 @@
 					</table>
 				</div>
 
-				<div id="menu2" class="tab-pane fade">
-					<h1>공지사항</h1>
-					<table class="table table-striped table-bordered table-hover">
-						<thead>
-							<tr>
-								<th width="10%">번호</th>
-								<th width="50%">제목</th>
-								<th width="10%">작성자</th>
-								<th width="20%">작성일</th>
-								<th width="10%">조회</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>1</td>
-								<td id="title">음란 광고 그만 올리세요. 경고합니다</td>
-								<td>운영자</td>
-								<td>17/02/03</td>
-								<td>21</td>
-							<tr>
-							<tr>
-								<td>2</td>
-								<td id="title">장난성 기부 전화 테러 오늘 저녁에 고발 조치 완료했습니다.</td>
-								<td>게시판지기</td>
-								<td>17/02/03</td>
-								<td>321</td>
-							<tr>
-							<tr>
-								<td>3</td>
-								<td id="title">오늘 KBS에서 방영된 전문 사기 프로젝트 단체 저희 아닙니다.</td>
-								<td>프로젝트 매니저</td>
-								<td>17/02/03</td>
-								<td>41</td>
-							<tr>
-						</tbody>
-					</table>
-				</div>
-
+			
 				<div id="menu3" class="tab-pane fade">
 					<h1>프로젝트 상세 설명</h1>
 					<img src="../../img/pjt_context1.jpg">
