@@ -1,0 +1,118 @@
+@import url(https://fonts.googleapis.com/css?family=Amarante);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+
+/*
+{ background-color : #F27E9D;} 
+{ background-color : #8C7280;} 
+{ background-color : #FFF1CC;} 
+{ background-color : #99828A;} 
+{ background-color : #F2ECE9;}
+*/
+
+body {
+    font-family: 'Pacifico', cursive;
+}
+
+.carousel-inner img {
+    width: 100%;
+    margin: auto;
+}
+
+.carousel-caption h3 {
+    color: #fff !important;
+}
+
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none;
+    }
+}
+
+h3 {
+    width: 1100px;
+    margin: auto;
+}
+
+.ProjectList a {
+    color: black;
+    text-decoration: none;
+}
+
+.caption p {
+    height: auto;
+    padding: 0px;
+    max-height: 100px;
+    word-break: break-all;
+    overflow: auto;
+}
+
+footer {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 90%;
+    height: 18%;
+    margin: auto;
+    background-color: black;
+}
+
+footer div {
+    padding: 10px;
+    color: white;
+    text-align: right;
+}
+
+footer a {
+    color: white;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #ffffff;
+    margin: 1em 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-button:start:decrement,
+ ::-webkit-scrollbar-button:end:increment {
+    display: block;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 50px;
+    width: 50px;
+    background: #babcc1;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+}
+
+html {
+    scrollbar-3dLight-Color: #efefef;
+    scrollbar-arrow-color: #dfdfdf;
+    scrollbar-base-color: #efefef;
+    scrollbar-Face-Color: #dfdfdf;
+    scrollbar-Track-Color: #efefef;
+    scrollbar-DarkShadow-Color: #efefef;
+    scrollbar-Highlight-Color: #efefef;
+    scrollbar-Shadow-Color: #efefef
+}
+
+#categoryList {
+    width: 1100px;
+    margin: auto;
+}
+
+.row td img
+{
+    width: 230px;
+    height:230px;
+}

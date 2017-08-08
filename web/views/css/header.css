@@ -1,0 +1,50 @@
+﻿/* main.css */
+@import url(https://fonts.googleapis.com/css?family=Amarante);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+
+.navbar {
+	color: black;
+	padding: 15px;
+	background-color: #F2ECE9;
+	border: none;
+	opacity: 0.9;
+}
+
+#home_logo {
+	color: #8C7280;
+	font-family: 'Pacifico', cursive;
+	font-size: 30px;
+	margin: 0;
+}
+
+#home_logo:hover {
+	color: #F27E9D;
+}
+
+.input-group input[type=text] {
+	border: 2px solid white;
+	border-radius: 6px;
+	font-size: 16px;
+	padding: 12px 20px 12px 20px;
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+	width: 260px;
+	margin-left: 72px;
+}
+
+.input-group input[type=text]:focus {
+	width: 120%;
+	border: 2px solid #F27E9D;
+	outline: 0;
+}
+
+.nav.navbar-nav.navbar-right li a {
+	color: #8C7280;
+	font-size: 18px;
+}
+
+.nav.navbar-nav.navbar-right li a:hover {
+	color: #F27E9D;
+}

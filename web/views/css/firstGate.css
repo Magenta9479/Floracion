@@ -1,0 +1,50 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Amarante);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+body {
+    cursor: pointer;
+}
+
+#bg {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    background: rgba(0, 0, 0, .7);
+}
+
+#text {
+    position: fixed;
+    top: 40%;
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    color: white;
+    background: rgba(0,0,0,.4);
+}
+
+h1 {
+    font-size: 800%;
+    font-family: 'Pacifico', cursive;
+}
+
+h3 {
+    text-align: center;
+}
+
+#videobcg {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    overflow: hidden;
+}
