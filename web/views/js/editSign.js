@@ -15,7 +15,7 @@ $(function() {
 					{						
 						window.location.href="/Floracion/medit?radio="+$('input[name=radio]').val()
 						+"&email="+$('input[name=email]').val()
-						+"&psw="+$('input[name=psw]').val()
+						+"&psw="+psw
 						+"&nick="+(nick.val()?nick.val():nick.attr('placeholder'))
 						+"&phone="+(phone.val()?phone.val():phone.attr('placeholder'));
 					}

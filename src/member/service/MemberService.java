@@ -54,10 +54,12 @@ public class MemberService
 
 		Connection con=getConnection();
 		
-		result=new MemberDao().editMember(con,email,psw,nick,phone,c);
-		System.out.println("result in service"+result);
 		
-		if(result>0) {commit(con);System.out.println("@!@@@");}		
+		result=new MemberDao().editMember(con,email,psw,nick,phone,c);
+		
+		
+		
+		if(result>0) commit(con);
 		else rollback(con);
 		
 		close(con);

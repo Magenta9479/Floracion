@@ -72,4 +72,8 @@ $(function() {
 				alert("인증번호를 확인해주세요.");
 			}
 		});
+		
+		$(':button[name=re]').click(function(){
+			window.locaion.href="/Floracion/main.jsp";
+		});
 	});

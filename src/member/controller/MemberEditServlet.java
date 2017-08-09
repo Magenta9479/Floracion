@@ -58,7 +58,7 @@ public class MemberEditServlet extends HttpServlet {
 		else member=(HoneyBee)member;
 				
 		int index=member.getClass().getName().lastIndexOf('.')+1;
-		
+		System.out.println("member in ser : "+member.getEmail()+","+psw+","+nick+","+phone+","+member.getClass().getName().charAt(index));
 		int result=new MemberService().editMember(member.getEmail(),psw,nick,phone,member.getClass().getName().charAt(index));
 		
 		if(result>0) 

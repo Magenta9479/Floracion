@@ -4,7 +4,6 @@
 <%
 	Member member = (Member) session.getAttribute("member");
 	if(member==null)member=(Member)request.getAttribute("member");
-		System.out.println(member);
 	String leave=request.getParameter("leave");
 
 	if (member instanceof Bloomer) {
