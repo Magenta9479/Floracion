@@ -1,7 +1,11 @@
 @charset "utf-8";
 
-@import
-	url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import	url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import	url(https://fonts.googleapis.com/css?family=Pacifico);
+
+* {
+	//border : 1px pink dotted;
+}
 
 input[type=text], input[type=password] {
 	width: 100%;
@@ -30,13 +34,17 @@ button:hover {
 .cancelbtn
 {
 	background-color: #f44336;
-	float:left;
+	float:right;
 }
 
 /* Center the image and position the close button */
 #home {
 	text-decoration: none;
-	color: #f27e9d;
+	font-weight: lighter;
+	color: #F27E9D;
+	font-family: 'Pacifico', cursive;
+	font-size: 60px;
+	margin: 0;
 }
 
 .imgcontainer {
@@ -86,7 +94,7 @@ span.psw {
 	width: 35%; /* Could be more or less, depending on screen size */
 }
 
-/* The Close Button (x) */
+/* 닫기 버튼 (x) */
 .close {
 	position: absolute;
 	right: 25px;
