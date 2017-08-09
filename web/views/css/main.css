@@ -4,20 +4,18 @@
 @import url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
 
 /*
-{ background-color : #F27E9D;} 
-{ background-color : #8C7280;} 
-{ background-color : #FFF1CC;} 
-{ background-color : #99828A;} 
+{ background-color : #F27E9D;}
+{ background-color : #8C7280;}
+{ background-color : #FFF1CC;}
+{ background-color : #99828A;}
 { background-color : #F2ECE9;}
 */
 
-body {
-    font-family: 'Pacifico', cursive;
-}
-
-.carousel-inner img {
+.carousel-inner .item img {
     width: 100%;
     margin: auto;
+    height: 600px;
+    max-height: 600px;
 }
 
 .carousel-caption h3 {

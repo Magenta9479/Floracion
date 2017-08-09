@@ -13,7 +13,7 @@
     </head>
 
     <body>
-        <%@ include file="./header.jsp"%>
+        <%@ include file="header.jsp"%>
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
