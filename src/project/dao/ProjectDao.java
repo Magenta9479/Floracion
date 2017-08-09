@@ -68,15 +68,31 @@ public class ProjectDao {
 		return PCode;
 	}
 
-	public ArrayList<Project> selectList(Connection con) {
+	public ArrayList<Project> selectList(Connection con, int num) {
 		ArrayList<Project> pbList = new ArrayList<Project>();
 		Project project = null;
 		ResultSet rset = null;
 		Statement stmt = null;
-		String query = "select PLANPROJECT.PCODE,NAME, PLANPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE "
-				+ "FROM PLANPROJECT " + "INNER JOIN PLANBRIEF " + "ON PLANPROJECT.PCODE = PLANBRIEF.PCODE";
+		String query = null;
+		
+		if(num==1) //예정 프로젝트
+		{
+			query="select PLANPROJECT.PCODE,NAME, PLANPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE "
+					+ "FROM PLANPROJECT " + "INNER JOIN PLANBRIEF " + "ON PLANPROJECT.PCODE = PLANBRIEF.PCODE";
+		}
+		else if(num==2) //진행 프로젝트
+		{
+			query="select CONPROJECT.PCODE,NAME, CONPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE "
+					+ "FROM CONPROJECT " + "INNER JOIN CONBRIEF " + "ON CONPROJECT.PCODE = CONBRIEF.PCODE";
+		}
+		else //종료 프로젝트
+		{
+			query="select ENDPROJECT.PCODE,NAME, ENDPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE "
+					+ "FROM ENDPROJECT " + "INNER JOIN ENDBRIEF " + "ON ENDPROJECT.PCODE = ENDBRIEF.PCODE";
+		}
 
 		try {
+			
 			stmt = con.createStatement();
 			rset = stmt.executeQuery(query);
 
@@ -88,6 +104,21 @@ public class ProjectDao {
 				project.setcMoney(rset.getInt("CMONEY"));
 				project.setgMoney(rset.getInt("GMONEY"));
 				project.setMainImage(rset.getString("MAINIMAGE"));
+
+				if(num==1) //예정 프로젝트
+				{
+					project.setWhat("P");
+				}
+				else if(num==2) //진행 프로젝트
+				{
+					project.setWhat("C");
+				}
+				else //종료 프로젝트
+				{
+					project.setWhat("E");
+				}
+				
+				
 				pbList.add(project);
 			}
 		} catch (Exception e) {

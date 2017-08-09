@@ -132,7 +132,7 @@
 				<%
 					for (int i = 0; i < 4; i++) {
 				%>
-				<a href="/Floracion/views/project/project.jsp">
+				<a href="/Floracion/pfind?pcode="<%= %>>
 					<div class="col-md-3">
 						<div class="thumbnail">
 							<img src="./img/img_1.jpg" alt="Lights" style="width: 100%">

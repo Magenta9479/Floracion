@@ -40,11 +40,11 @@ public class ProjectService {
 		return pCode;
 	}
 
-	public ArrayList<Project> selectList() {
+	public ArrayList<Project> selectList(int num) {
 		ArrayList<Project> pbList = null;
 		Connection con = getConnection();
 
-		pbList = new ProjectDao().selectList(con);
+		pbList = new ProjectDao().selectList(con,num);
 		close(con);
 
 		return pbList;

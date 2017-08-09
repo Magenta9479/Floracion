@@ -37,11 +37,12 @@ public class Project_Main extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ArrayList<Project> pbList = new ArrayList<Project>();
-
-		pbList = new ProjectService().selectList();
+		int num=Integer.parseInt(request.getParameter("num"));
+		
+		pbList = new ProjectService().selectList(num);
 
 		RequestDispatcher view = null;
-		view = request.getRequestDispatcher("/Floracion/main.jsp");
+		view = request.getRequestDispatcher("/main.jsp");
 
 		request.setAttribute("pbList", pbList);
 		view.forward(request, response);
