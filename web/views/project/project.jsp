@@ -87,10 +87,11 @@
 		<div id="board_area">
 
 			<ul class="nav nav-pills">
-				<li class="active"><a data-toggle="pill" href="#menu1">자유게시판</a></li>
-				<li><a data-toggle="pill" href="#menu2">공지사항</a></li>
-				<li><a data-toggle="pill" href="#menu3">프로젝트 설명</a></li>
-				<li><a data-toggle="pill" href="#menu4">참여자 명단</a></li>
+				<li class="active"><a data-toggle="pill" href="#menu1">공지사항</a></li>
+				<li><a data-toggle="pill" href="#menu2">자유게시판</a></li>
+				<li><a data-toggle="pill" href="#menu3">프로젝트 게시판</a></li>
+				<li><a data-toggle="pill" href="#menu4">프로젝트 설명</a></li>
+				<li><a data-toggle="pill" href="#menu5">참여자 명단</a></li>
 			</ul>
 
 			<div class="tab-content">
@@ -129,9 +130,28 @@
 						</tbody>
 					</table>
 				</div>
-
-
+				
 				<div id="menu3" class="tab-pane fade">
+					<h1>프로젝트 게시판</h1>
+					<table class="table table-striped table-bordered table-hover">
+						<thead>
+							<tr>
+								<th width="10%">번호</th>
+								<th width="50%">제목</th>
+								<th width="10%">작성자</th>
+								<th width="20%">작성일</th>
+								<th width="10%">조회</th>
+							</tr>
+						</thead>
+						<tbody id="pboard">
+							
+						</tbody>
+					</table>
+				</div>
+				
+				
+
+				<div id="menu4" class="tab-pane fade">
 					<h1>프로젝트 상세 설명</h1>
 					<img src="../../img/pjt_context1.jpg">
 					<p style="text-align: center">Echo Dot is a hands-free,
@@ -149,7 +169,7 @@
 					<img src="../../img/<pjt_context2></pjt_context2>.jpg">
 				</div>
 
-				<div id="menu4" class="tab-pane fade">
+				<div id="menu5" class="tab-pane fade">
 					<h1>프로젝트 참여자 명단</h1>
 					<div class="container bootstrap snippet">
 						<div class="row">
@@ -256,6 +276,8 @@
 					</div>
 				</div>
 			</div>
+
+			<button id="show_more_btn">게시글 더 불러오기</button>
 
 		</div>
 	</div>
