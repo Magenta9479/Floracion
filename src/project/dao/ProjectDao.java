@@ -74,29 +74,28 @@ public class ProjectDao {
 		ResultSet rset = null;
 		Statement stmt = null;
 		String query = null;
-		
-		if(num==1) //예정 프로젝트
+		System.out.println(num);
+		if (num == 1) // 예정 프로젝트
 		{
-			query="select PLANPROJECT.PCODE,NAME, PLANPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE "
+			query = "select PLANPROJECT.PCODE,NAME, PLANPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
 					+ "FROM PLANPROJECT " + "INNER JOIN PLANBRIEF " + "ON PLANPROJECT.PCODE = PLANBRIEF.PCODE";
-		}
-		else if(num==2) //진행 프로젝트
+		} else if (num == 2) // 진행 프로젝트
 		{
-			query="select CONPROJECT.PCODE,NAME, CONPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE "
+			query = "select CONPROJECT.PCODE,NAME, CONPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
 					+ "FROM CONPROJECT " + "INNER JOIN CONBRIEF " + "ON CONPROJECT.PCODE = CONBRIEF.PCODE";
-		}
-		else //종료 프로젝트
+		} else // 종료 프로젝트
 		{
-			query="select ENDPROJECT.PCODE,NAME, ENDPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE "
+			query = "select ENDPROJECT.PCODE,NAME, ENDPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE,LEADCODE, CATEGORY "
 					+ "FROM ENDPROJECT " + "INNER JOIN ENDBRIEF " + "ON ENDPROJECT.PCODE = ENDBRIEF.PCODE";
 		}
-
+		System.out.println(query);
 		try {
-			
+
 			stmt = con.createStatement();
 			rset = stmt.executeQuery(query);
 
 			while (rset.next()) {
+				System.out.println("들어옴");
 				project = new Project();
 				project.setPcode(rset.getString("PCODE"));
 				project.setName(rset.getString("NAME"));
@@ -104,29 +103,32 @@ public class ProjectDao {
 				project.setcMoney(rset.getInt("CMONEY"));
 				project.setgMoney(rset.getInt("GMONEY"));
 				project.setMainImage(rset.getString("MAINIMAGE"));
+				project.setLeader(rset.getString("LEADCODE"));
+				System.out.println(rset.getString("LEADCODE"));
+				project.setCategory(rset.getString("CATEGORY"));
 
-				if(num==1) //예정 프로젝트
+				if (num == 1) // 예정 프로젝트
 				{
 					project.setWhat("P");
-				}
-				else if(num==2) //진행 프로젝트
+				} else if (num == 2) // 진행 프로젝트
 				{
 					project.setWhat("C");
-				}
-				else //종료 프로젝트
+				} else // 종료 프로젝트
 				{
 					project.setWhat("E");
 				}
-				
-				
+
 				pbList.add(project);
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		} finally {
 			try {
-				rset.close();
-				stmt.close();
+				// rset.close();
+				close(rset);
+				// stmt.close();
+				close(stmt);
+
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
