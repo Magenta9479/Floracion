@@ -1,163 +1,231 @@
-﻿/* main.css */
+/* main.css */
+
 @import url(https://fonts.googleapis.com/css?family=Amarante);
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);
 @import url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
-
-.navbar {
-	color: black;
-	padding: 14px;
-	background-color: #F2ECE9;
-	border: none;
-	opacity: 0.9;
+* {
+  //border: 1px pink dotted;
 }
 
+.navbar-fixed-top {
+  color: black;
+	margin: auto;
+  background-color: #F2ECE9;
+  border: none;
+}
+
+/*배너 로고 시작*/
 #home_logo {
-	color: #8C7280;
-	font-family: 'Pacifico', cursive;
-	font-size: 30px;
-	margin: 0;
+	display: inline-block;
+  color: #8C7280;
+  font-family: 'Pacifico', cursive;
+  font-size: 34px;
+  margin: auto;
+	margin-top: 15px;
+	text-align: center;
 }
 
 #home_logo:hover {
-	color: #F27E9D;
+  color: #F27E9D;
+}
+/*배너 로고 끝*/
+
+/*검색창 시작*/
+.nav-item .input-group input[type=text] {
+  border: 2px solid white;
+  border-radius: 6px;
+  font-size: 14px;
+  padding: auto;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  width: 200px;
+	margin-top: 15px;
 }
 
-.navbar .input-group input[type=text] {
-	border: 2px solid white;
+.nav-item .input-group input[type=text]:focus {
+  width: 150%;
+  border: 2px solid #F27E9D;
+  outline: 0;
+}
+/*검색창 끝*/
+
+/*배너 메뉴 구성 시작*/
+.nav-item {
+  list-style: none;
+	display: inline-block;
+}
+
+.navbar_btn_group {
+	float: right;
+	margin-top: 15px;
+}
+
+.nav-item a {
+	display: inline-block;
+	text-decoration: none;
+	padding: 12px 16px;
+	background-color: #F27E9D;
+	color: white;
 	border-radius: 6px;
-	font-size: 14px;
-	padding: 12px 20px 12px 20px;
-	-webkit-transition: width 0.4s ease-in-out;
-	transition: width 0.4s ease-in-out;
-	width: 260px;
-	margin-left: 72px;
 }
 
-.navbar .input-group input[type=text]:focus {
-	width: 120%;
-	border: 2px solid #F27E9D;
-	outline: 0;
+.nav-item button {
+  display: inline-block;
+	border: 0;
+  background-color: #F27E9D;
+  padding: 12px 16px;
+  color: white;
+  border-radius: 6px;
+}
+/*배너 메뉴 구성 끝*/
+
+/*modal 시작*/
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+	border: 2px solid white;
 }
 
-.navbar .nav.navbar-nav.navbar-right li a {
-	color: #8C7280;
-	font-size: 14px;
+input[type=text]:focus, input[type=password]:focus {
+  border: 2px solid #F27E9D;
+  outline: 0;
 }
 
-.navbar .nav.navbar-nav.navbar-right li a:hover {
-	color: #F27E9D;
-}
-
-input[type=text],
-input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-/* Set a style for all buttons */
+/* modal 로그인 버튼 */
 .modal button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
+  background-color: #F27E9D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
 }
 
 .modal button:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 /* Center the image and position the close button */
 .modal .imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-    position: relative;
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
 }
 
 .modal img.avatar {
-    width: 40%;
-    border-radius: 50%;
+  width: 40%;
+  border-radius: 50%;
+	max-height: 200px;
+	max-width: 200px;
 }
 
 .modal span.psw {
-    float: right;
-    padding-top: 16px;
+  float: right;
+  padding-top: 16px;
 }
 
+
 /* The Modal (background) */
+
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 60px;
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  padding-top: 60px;
 }
 
 .modal .container {
-	background-color: #F2ECE9;
-    padding: 16px;
+  background-color: #F2ECE9;
+  padding: 20px;
+  width: 40%;
 }
+
 
 /* Modal Content/Box */
+
 .modal-content {
-    background-color: #fefefe;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+  opacity: 1.0;
+  background-color: #fefefe;
+  margin: 5% auto 15% auto;
+  /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%;
+  /* Could be more or less, depending on screen size */
 }
+
 
 /* The Close Button (x) */
+
 .close {
-    position: absolute;
-    right: 25px;
-    top: 0;
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
-    color: red;
-    cursor: pointer;
+.close:hover, .close:focus {
+  color: red;
+  cursor: pointer;
 }
+
 
 /* Add Zoom Animation */
+
 .animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
 }
 
 @-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)}
-    to {-webkit-transform: scale(1)}
+  from {
+    -webkit-transform: scale(0)
+  }
+  to {
+    -webkit-transform: scale(1)
+  }
 }
 
 @keyframes animatezoom {
-    from {transform: scale(0)}
-    to {transform: scale(1)}
+  from {
+    transform: scale(0)
+  }
+  to {
+    transform: scale(1)
+  }
 }
 
+
 /* Change styles for span and cancel button on extra small screens */
+
 @media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
 }
