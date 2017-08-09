@@ -2,6 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);
 @import url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 
 /*
 { background-color : #F27E9D;}
@@ -11,26 +12,80 @@
 { background-color : #F2ECE9;}
 */
 
+* {
+  //border: 1px pink dotted;
+}
+
 .carousel-inner .item img {
     width: 100%;
     margin: auto;
-    height: 600px;
-    max-height: 600px;
+    height: 720px;
+    max-height: 720px;
 }
 
 .carousel-caption h3 {
     color: #fff !important;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 720px) {
     .carousel-caption {
         display: none;
     }
 }
 
+body {
+  background-color : #F2ECE9;
+}
+
 h3 {
+    font-size: 42px;
+}
+
+
+#categoryList {
     width: 1100px;
     margin: auto;
+}
+
+
+td a{
+  position: relative;
+  font-size: 24px;
+}
+
+.module {
+  width: 230px;
+  height:230px;
+  margin: 10px 0 0 10px;
+  position: relative;
+  float: left;
+  opacity: 0.6;
+}
+
+.module:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 200ms ease-in;
+transform: scale(1.1);
+}
+
+.module h2 {
+  opacity: 1.0;
+  font-family: 'Nanum Gothic Coding', serif;
+  font-size: 42px;
+  font-weight: bolder;
+  color: #8C7280;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.row td img
+{
+    width: 230px;
+    height:230px;
 }
 
 .ProjectList a {
@@ -91,26 +146,4 @@ hr {
     background: #babcc1;
     -webkit-border-radius: 8px;
     border-radius: 8px;
-}
-
-html {
-    scrollbar-3dLight-Color: #efefef;
-    scrollbar-arrow-color: #dfdfdf;
-    scrollbar-base-color: #efefef;
-    scrollbar-Face-Color: #dfdfdf;
-    scrollbar-Track-Color: #efefef;
-    scrollbar-DarkShadow-Color: #efefef;
-    scrollbar-Highlight-Color: #efefef;
-    scrollbar-Shadow-Color: #efefef
-}
-
-#categoryList {
-    width: 1100px;
-    margin: auto;
-}
-
-.row td img
-{
-    width: 230px;
-    height:230px;
 }
