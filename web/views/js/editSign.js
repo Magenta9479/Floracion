@@ -15,9 +15,10 @@ $(function() {
 					{						
 						window.location.href="/Floracion/medit?radio="+$('input[name=radio]').val()
 						+"&email="+$('input[name=email]').val()
-						+"&psw="+$('input[name=psw]').val()
+						+"&psw="+psw
 						+"&nick="+(nick.val()?nick.val():nick.attr('placeholder'))
 						+"&phone="+(phone.val()?phone.val():phone.attr('placeholder'));
+						alert("정보수정 완료!\n다시 로그인해주세요.");
 					}
 					else
 					{
