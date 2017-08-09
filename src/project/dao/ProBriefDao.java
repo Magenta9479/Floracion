@@ -3,6 +3,10 @@ package project.dao;
 import static common.JDBCTemplate.close;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+
 import project.vo.ProjectBrief;
 
 public class ProBriefDao 
@@ -31,6 +35,14 @@ public class ProBriefDao
 			close(pstmt);
 		}
 		return result;
+	}
+
+	public ArrayList<ProjectBrief> selectList(Connection con) {
+		
+		ResultSet rset = null;
+		Statement stmt = null;
+		String query = "SELECT "
+		return null;
 	}
 
 }

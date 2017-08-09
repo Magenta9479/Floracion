@@ -1,6 +1,8 @@
 package project.service;
 
 import java.sql.Connection;
+import java.util.ArrayList;
+
 import static common.JDBCTemplate.*;
 
 import project.dao.ProBriefDao;
@@ -24,6 +26,16 @@ public class ProjectBriefService {
 		close(con);
 
 		return result;
+	}
+
+	public ArrayList<ProjectBrief> selectList() {
+		// TODO Auto-generated method stub
+		ArrayList<ProjectBrief>pbList = null;
+		Connection con = getConnection();
+		
+		pbList = new ProBriefDao().selectList(con);
+		
+		return null;
 	}
 
 }

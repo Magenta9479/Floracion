@@ -47,7 +47,7 @@ public class ProjectDao {
 		System.out.println("Project DAO 접속 성공");
 		int result = 0;
 		PreparedStatement pstmt = null;
-		String query = "select PCODE FROM PLANPROJECT";
+		String query = "select PCODE from (SELECT * FROM PLANPROJECT order by PCODE DESC) WHERE ROWNUM = 1";
 		ResultSet rset = null;
 		try {
 			pstmt = con.prepareStatement(query);
