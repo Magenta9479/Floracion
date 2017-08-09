@@ -46,7 +46,7 @@
 					required> <input type="text" placeholder="<%=member.getPhone()%>"
 					name="phone" required>
 				<input
-					type="text" name="psw-repeat" value="관심 카테고리 : <%=member.getCategory1() %>, <%=member.getCategory2() %>, <%=member.getCategory3() %>" readonly required>
+					type="text" name="psw-repeat" value="관심 카테고리 : <%=member.getCategory1()==null?"없음":member.getCategory1() %>, <%=member.getCategory2()==null?"없음":member.getCategory2() %>, <%=member.getCategory3()==null?"없음":member.getCategory3() %>" readonly required>
 				
 				<div class="clearfix">
 					<button type="button" class="cancelbtn" name="cancle">취소</button>

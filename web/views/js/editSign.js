@@ -18,6 +18,7 @@ $(function() {
 						+"&psw="+psw
 						+"&nick="+(nick.val()?nick.val():nick.attr('placeholder'))
 						+"&phone="+(phone.val()?phone.val():phone.attr('placeholder'));
+						alert("정보수정 완료!\n다시 로그인해주세요.");
 					}
 					else
 					{
