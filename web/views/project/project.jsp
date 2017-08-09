@@ -83,10 +83,11 @@
 		<div id="board_area">
 
 			<ul class="nav nav-pills">
-				<li class="active"><a data-toggle="pill" href="#menu1">자유게시판</a></li>
-				<li><a data-toggle="pill" href="#menu2">공지사항</a></li>
-				<li><a data-toggle="pill" href="#menu3">프로젝트 설명</a></li>
-				<li><a data-toggle="pill" href="#menu4">참여자 명단</a></li>
+				<li class="active"><a data-toggle="pill" href="#menu1">공지사항</a></li>
+				<li><a data-toggle="pill" href="#menu2">자유게시판</a></li>
+				<li><a data-toggle="pill" href="#menu3">프로젝트 게시판</a></li>
+				<li><a data-toggle="pill" href="#menu4">프로젝트 설명</a></li>
+				<li><a data-toggle="pill" href="#menu5">참여자 명단</a></li>
 			</ul>
 
 			<div class="tab-content">
@@ -103,14 +104,11 @@
 							</tr>
 						</thead>
 						<tbody id="fuck">
-							
+
 
 						</tbody>
 					</table>
 				</div>
-
-
-
 
 				<div id="menu2" class="tab-pane fade">
 					<h1>자유게시판</h1>
@@ -151,8 +149,47 @@
 					</table>
 				</div>
 
-
 				<div id="menu3" class="tab-pane fade">
+					<h1>프로젝트 게시판</h1>
+					<table class="table table-striped table-bordered table-hover">
+						<thead>
+							<tr>
+								<th width="10%">번호</th>
+								<th width="50%">제목</th>
+								<th width="10%">작성자</th>
+								<th width="20%">작성일</th>
+								<th width="10%">조회</th>
+							</tr>
+						</thead>
+						<tbody >
+							<tr>
+								<td>1</td>
+								<td id="title">스타3 언제 발매하나요?</td>
+								<td>스덕</td>
+								<td>17/02/03</td>
+								<td>21</td>
+							<tr>
+							<tr>
+								<td>2</td>
+								<td id="title">###***!!!1000% 수익 보장 완전 무료 정년 45세 보장 1000만원
+									즉시 입금!!!***###</td>
+								<td>쓰레기광고맨</td>
+								<td>17/02/04</td>
+								<td>321</td>
+							<tr>
+							<tr>
+								<td>3</td>
+								<td id="title">스타5 언제 발매하나요?</td>
+								<td>스덕3</td>
+								<td>17/02/03</td>
+								<td>41</td>
+							<tr>
+						</tbody>
+					</table>
+				</div>
+
+
+				<div id="menu4" class="tab-pane fade">
 					<h1>프로젝트 상세 설명</h1>
 					<img src="../../img/pjt_context1.jpg">
 					<p style="text-align: center">Echo Dot is a hands-free,
@@ -170,7 +207,7 @@
 					<img src="../../img/<pjt_context2></pjt_context2>.jpg">
 				</div>
 
-				<div id="menu4" class="tab-pane fade">
+				<div id="menu5" class="tab-pane fade">
 					<h1>프로젝트 참여자 명단</h1>
 					<div class="container bootstrap snippet">
 						<div class="row">
@@ -278,50 +315,15 @@
 				</div>
 			</div>
 
+
+			<button id="show_more_btn">게시글 더 불러오기</button>
+
 		</div>
 	</div>
 
-	<!--  숨겨진 로그인 창 -->
 
 
-	<div id="id01" class="modal">
 
-		<form class="modal-content animate" action="/action_page.php">
-			<div class="imgcontainer">
-				<span onclick="document.getElementById('id01').style.display='none'"
-					class="close" title="Close Modal">&times;</span>
-			</div>
-
-			<div class="container">
-				<label><b>아이디</b></label> <input type="text"
-					placeholder="아이디를 입력해주세요" name="uname" required> <label><b>비밀번호</b></label>
-				<input type="password" placeholder="비밀번호를 입력해주세요" name="psw"
-					required>
-
-				<button type="submit">로그인</button>
-				<input type="checkbox" checked="checked"> 로그인 정보를 기억합니다.
-			</div>
-
-			<div class="container" style="background-color: #f1f1f1">
-				<button type="button"
-					onclick="document.getElementById('id01').style.display='none'"
-					class="cancelbtn">취소</button>
-				<span class="psw"><a href="#">비밀번호</a>를 잊으셨나요?</span>
-			</div>
-		</form>
-	</div>
-
-	<script>
-		// Get the modal
-		var modal = document.getElementById('id01');
-
-		// When the user clicks anywhere outside of the modal, close it
-		window.onclick = function(event) {
-			if (event.target == modal) {
-				modal.style.display = "none";
-			}
-		}
-	</script>
 </body>
 
 </html>
