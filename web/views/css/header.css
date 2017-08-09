@@ -62,6 +62,10 @@
 	margin-top: 15px;
 }
 
+.navbar_btn_group li a{
+  text-decoration: none;
+}
+
 .nav-item a {
 	display: inline-block;
 	text-decoration: none;
