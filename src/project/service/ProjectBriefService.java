@@ -16,7 +16,7 @@ public class ProjectBriefService {
 		int result = 0;
 		Connection con = getConnection();
 
-		result = new ProBriefDao().insertProjectBrief(con, projectBrief,pCode);
+		result = new ProBriefDao().insertProjectBrief(con, projectBrief, pCode);
 
 		if (result > 0)
 			commit(con);
@@ -26,16 +26,6 @@ public class ProjectBriefService {
 		close(con);
 
 		return result;
-	}
-
-	public ArrayList<ProjectBrief> selectList() {
-		// TODO Auto-generated method stub
-		ArrayList<ProjectBrief>pbList = null;
-		Connection con = getConnection();
-		
-		pbList = new ProBriefDao().selectList(con);
-		
-		return null;
 	}
 
 }

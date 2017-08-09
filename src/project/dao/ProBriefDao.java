@@ -7,10 +7,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import project.vo.Project;
 import project.vo.ProjectBrief;
 
-public class ProBriefDao 
-{
+public class ProBriefDao {
 
 	public int insertProjectBrief(Connection con, ProjectBrief projectBrief, String pCode) {
 		System.out.println("Project DAO 접속 성공");
@@ -30,19 +30,11 @@ public class ProBriefDao
 			result = pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("프로젝트 INSERT 실패");ㅇ
+			System.out.println("프로젝트 INSERT 실패");
 		} finally {
 			close(pstmt);
 		}
 		return result;
-	}
-
-	public ArrayList<ProjectBrief> selectList(Connection con) {
-		
-		ResultSet rset = null;
-		Statement stmt = null;
-		String query = "SELECT "
-		return null;
 	}
 
 }

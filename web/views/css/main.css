@@ -39,11 +39,15 @@ h3 {
 }
 
 .caption p {
-    height: auto;
+    height: 75px;
     padding: 0px;
-    max-height: 100px;
-    word-break: break-all;
-    overflow: auto;
+/*    max-height: 90px;*/
+    word-wrap: break-word;
+/*    white-space: nowrap;*/
+    -webkit-line-clamp:3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 footer {

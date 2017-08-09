@@ -70,7 +70,6 @@ public class NoticeListServlet extends HttpServlet {
 	    out.print(json.toJSONString());
 	    out.flush();
 	    out.close();
-	    System.out.println("서블릿 끝");
 	}
 
 	/**

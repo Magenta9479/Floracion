@@ -1,7 +1,6 @@
 package project.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,22 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import project.service.ProjectBriefService;
 import project.service.ProjectService;
 import project.vo.Project;
-import project.vo.ProjectBrief;
 
 /**
- * Servlet implementation class Project_Main
+ * Servlet implementation class ProjectFindServlet
  */
-@WebServlet("/pmain")
-public class Project_Main extends HttpServlet {
+@WebServlet("/pfind")
+public class ProjectFindServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public Project_Main() {
+	public ProjectFindServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -36,15 +33,21 @@ public class Project_Main extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		ArrayList<Project> pbList = new ArrayList<Project>();
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8");
 
-		pbList = new ProjectService().selectList();
+		String pcode = request.getParameter("pcode");
+		String what = request.getParameter("what");
 
-		RequestDispatcher view = null;
-		view = request.getRequestDispatcher("/Floracion/main.jsp");
+		Project project = new ProjectService().projectFind(pcode, what);
 
-		request.setAttribute("pbList", pbList);
-		view.forward(request, response);
+		if (project != null) {
+			RequestDispatcher view = request.getRequestDispatcher("/Floracion/views/project.jsp");
+			request.setAttribute("project", project);
+			view.forward(request, response);
+		} else {
+			System.out.println("여기 안오길 빌어라");
+		}
 	}
 
 	/**
