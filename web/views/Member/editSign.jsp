@@ -5,13 +5,12 @@
 	Member member = (Member) session.getAttribute("member");
 	if(member==null)member=(Member)request.getAttribute("member");
 	String leave=request.getParameter("leave");
-
+	System.out.println(member);
 	if (member instanceof Bloomer) {
 		member = (Bloomer) member;
 	} else {
 		member = (HoneyBee) member;
 	}
-	int index = member.getClass().getName().lastIndexOf('.') + 1;
 %>
 
 <!DOCTYPE html>
@@ -37,7 +36,7 @@
 		<div style="border: 1px solid #ccc">
 			<div class="container">
 				<input type="text"
-					value="<%=member.getClass().getName().charAt(index)%>" name="radio"
+					value="<%=member.getMbcode().charAt(0)%>" name="radio"
 					style="display: none;"> <input type="text"
 					value="<%=member.getEmail()%>" name="email" readonly> <input
 					type="password" placeholder="비밀번호" name="psw" required> <input

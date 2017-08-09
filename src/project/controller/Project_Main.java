@@ -32,10 +32,10 @@ public class Project_Main extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		ArrayList<ProjectBrief>pbList = new ArrayList<ProjectBrief>();
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
+//		ArrayList<ProjectBrief>pbList = new ArrayList<ProjectBrief>();
 		
-		pbList = new ProjectBriefService().selectList();
+//		pbList = new ProjectBriefService().selectList();
 		response.sendRedirect("/Floracion/main.jsp");
 	}
 

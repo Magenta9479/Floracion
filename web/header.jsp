@@ -18,11 +18,6 @@
 		<%
 			String email=request.getParameter("email");
 			Member member=(Member)session.getAttribute("member");
-
-			if(session.getAttribute("member")!=null)
-			{
-				session.invalidate();
-			}
 		%>
 	</script>
 

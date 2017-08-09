@@ -225,6 +225,7 @@ public class MemberDao {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		String query = null;
+		System.out.println(email+"  "+pwd+"  "+radio);
 		try {
 			if (radio.equals("B")) {
 				query = "SELECT * FROM BLOOMER WHERE EMAIL=? AND PWD=?";
@@ -232,8 +233,8 @@ public class MemberDao {
 				pstmt.setString(1, email);
 				pstmt.setString(2, pwd);
 				rset = pstmt.executeQuery();
-
 				if (rset.next()) {
+					System.out.println("2");
 					member = new Bloomer();
 					member.setMbcode(rset.getString("MBCODE"));
 					member.setEmail(rset.getString("EMAIL"));
@@ -274,7 +275,7 @@ public class MemberDao {
 			close(rset);
 			close(pstmt);
 		}
-		
+		System.out.println(member);
 		return member;
 	}
 

@@ -30,7 +30,7 @@ public class ProBriefDao
 			result = pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("프로젝트 INSERT 실패");
+			System.out.println("프로젝트 INSERT 실패");ㅇ
 		} finally {
 			close(pstmt);
 		}
