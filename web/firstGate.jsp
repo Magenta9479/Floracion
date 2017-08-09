@@ -10,7 +10,7 @@
         <script type="text/javascript">
             $(function() {
                 $('body').on('click', function() {
-                  location.replace('/Floracion/main.jsp');
+                    location.replace('/Floracion/pmain');
                 });
             });
 

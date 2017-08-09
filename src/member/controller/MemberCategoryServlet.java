@@ -42,6 +42,7 @@ public class MemberCategoryServlet extends HttpServlet {
 		Member member=(Member)session.getAttribute("member");
 		
 		int result=new MemberService().insertCate(member,cate1,cate2,cate3);
+		session.setAttribute("member", new MemberService().findMember(member.getEmail(), member.getMbcode().substring(0, 1)));
 		
 		response.getWriter().append(String.valueOf(result));
 		

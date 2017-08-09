@@ -39,10 +39,15 @@ public class MemberEditServlet extends HttpServlet {
 		String email=request.getParameter("email");
 		String psw=request.getParameter("psw");
 		String nick=request.getParameter("nick");
-		String phone=request.getParameter("phone");
+		String phone=request.getParameter("phone");		
 		
 		
 		Member member=(Member)session.getAttribute("member");
+		
+		if(psw.isEmpty()) 
+		{
+			psw=member.getPwd();
+		}
 		
 		if(member==null) 
 		{			
@@ -53,7 +58,6 @@ public class MemberEditServlet extends HttpServlet {
 		else member=(HoneyBee)member;
 				
 		int index=member.getClass().getName().lastIndexOf('.')+1;
-		
 		int result=new MemberService().editMember(member.getEmail(),psw,nick,phone,member.getClass().getName().charAt(index));
 		
 		if(result>0) 

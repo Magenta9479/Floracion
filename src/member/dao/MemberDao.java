@@ -225,21 +225,19 @@ public class MemberDao {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		String query = null;
-		System.out.println("@@@@@");
-		System.out.println("radio : "+radio);
 		try {
 			if (radio.equals("B")) {
 				query = "SELECT * FROM BLOOMER WHERE EMAIL=? AND PWD=?";
 				pstmt = con.prepareStatement(query);
 				pstmt.setString(1, email);
 				pstmt.setString(2, pwd);
-				System.out.println("@@@@@@@");
 				rset = pstmt.executeQuery();
 
 				if (rset.next()) {
 					member = new Bloomer();
+					member.setMbcode(rset.getString("MBCODE"));
 					member.setEmail(rset.getString("EMAIL"));
-					member.setPwd(rset.getString("EMAIL"));
+					member.setPwd(rset.getString("PWD"));
 					member.setNick(rset.getString("NICK"));
 					member.setPhone(rset.getString("PHONE"));
 					((Bloomer) member).setLeader(rset.getString("LEADER"));
@@ -248,10 +246,8 @@ public class MemberDao {
 					member.setCategory1(rset.getString("CATEGORY1"));
 					member.setCategory2(rset.getString("CATEGORY2"));
 					member.setCategory3(rset.getString("CATEGORY3"));
-					System.out.println("#############");
 				}
-			} else {
-				System.out.println("123123");
+			} else {				
 				query = "SELECT * FROM HONEYBEE WHERE EMAIL=? AND PWD=?";
 				pstmt = con.prepareStatement(query);
 				pstmt.setString(1, email);
@@ -262,7 +258,7 @@ public class MemberDao {
 				if (rset.next()) {
 					member = new HoneyBee();
 					member.setEmail(rset.getString("EMAIL"));
-					member.setPwd(rset.getString("EMAIL"));
+					member.setPwd(rset.getString("PWD"));
 					member.setNick(rset.getString("NICK"));
 					member.setPhone(rset.getString("PHONE"));
 					member.setEnrollDay(rset.getDate("ENROLLDAY"));
@@ -278,7 +274,7 @@ public class MemberDao {
 			close(rset);
 			close(pstmt);
 		}
-		System.out.println("rororrl");
+		
 		return member;
 	}
 
@@ -299,6 +295,7 @@ public class MemberDao {
 
 				if (rset.next()) {
 					member = new Bloomer();
+					member.setMbcode(rset.getString("MBCODE"));
 					member.setEmail(rset.getString("EMAIL"));
 					member.setPwd(rset.getString("PWD"));
 					member.setNick(rset.getString("NICK"));
@@ -319,6 +316,7 @@ public class MemberDao {
 
 				if (rset.next()) {
 					member = new HoneyBee();
+					member.setMbcode(rset.getString("MHCODE"));
 					member.setEmail(rset.getString("EMAIL"));
 					member.setPwd(rset.getString("EMAIL"));
 					member.setNick(rset.getString("NICK"));
@@ -341,7 +339,6 @@ public class MemberDao {
 		int result = -1;
 		PreparedStatement pstmt = null;
 		String query = null;
-
 		try {
 			if (c == 'B') {
 				query = "UPDATE BLOOMER SET PWD=?,NICK=?,PHONE=? WHERE EMAIL=?";
@@ -351,7 +348,7 @@ public class MemberDao {
 				pstmt.setString(2, nick);
 				pstmt.setString(3, phone);
 				pstmt.setString(4, email);
-				System.out.println(pstmt.toString());
+				
 				result = pstmt.executeUpdate();
 			} else {
 				query = "UPDATE HONEYBEE SET PWD=?,NICK=?,PHONE=? WHERE EMAIL=?";
@@ -369,7 +366,7 @@ public class MemberDao {
 		} finally {
 			close(pstmt);
 		}
-		System.out.println("dao result" + result);
+		
 		return result;
 	}
 
@@ -410,6 +407,123 @@ public class MemberDao {
 			close(pstmt);
 		}
 
+		return result;
+	}
+
+	public int leaveMember(Connection con, Member member)
+	{
+		int result1 = -1;
+		int result2=-1;
+		PreparedStatement pstmt = null;
+		String query1 = null;
+		String query2 = null;
+
+		try {
+			if (member instanceof Bloomer) {
+				Bloomer b = (Bloomer) member;
+
+				query1 = "INSERT INTO LEAVEMEMBER (EMAIL,MCODE,NICK,ENROLLDAY,LEAVEDAY,FLAG)"+
+						"SELECT EMAIL,MBCODE,NICK,ENROLLDAY,LEAVEDAY,'B'"+
+						"FROM BLOOMER WHERE EMAIL=?";
+				query2="DELETE BLOOMER WHERE EMAIL=?";
+
+				pstmt = con.prepareStatement(query1);
+				pstmt.setString(1, member.getEmail());
+
+				result1 = pstmt.executeUpdate();
+				
+				pstmt = con.prepareStatement(query2);
+				pstmt.setString(1, member.getEmail());
+
+				result2 = pstmt.executeUpdate();
+			} else {
+				HoneyBee h = (HoneyBee) member;
+				
+				query1 = "INSERT INTO LEAVEMEMBER (EMAIL,MCODE,NICK,ENROLLDAY,LEAVEDAY,FLAG)"+
+						"SELECT EMAIL,MHCODE,NICK,ENROLLDAY,LEAVEDAY,'H'"+
+						"FROM HONEYBEE WHERE EMAIL=?";
+				query2="DELETE HONEYBEE WHERE EMAIL=?";
+
+				pstmt = con.prepareStatement(query1);
+				pstmt.setString(1, member.getEmail());
+
+				result1 = pstmt.executeUpdate();
+				
+				pstmt = con.prepareStatement(query2);
+				pstmt.setString(1, member.getEmail());
+
+				result2 = pstmt.executeUpdate();
+			}
+		} catch (Exception e) {			
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+
+		return result1+result2;
+	}
+
+	public int choiceLeaveMember(Connection con, Member member) 
+	{
+		int result = -1;
+		PreparedStatement pstmt = null;
+		String query = null;
+
+		try {
+			if (member instanceof Bloomer) {
+				query = "UPDATE BLOOMER SET LEAVEDAY=SYSDATE WHERE EMAIL=?";
+
+				pstmt = con.prepareStatement(query);
+				pstmt.setString(1, member.getEmail());
+				
+				result = pstmt.executeUpdate();
+			} else {
+				query = "UPDATE HONEYBEE SET LEAVEDAY=SYSDATE WHERE EMAIL=?";
+
+				pstmt = con.prepareStatement(query);
+				pstmt.setString(1, member.getEmail());
+
+				result = pstmt.executeUpdate();
+			}
+		} catch (Exception e)
+		{
+				e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public int cancleLeave(Connection con, Member member)
+	{
+		int result = -1;
+		PreparedStatement pstmt = null;
+		String query = null;
+
+		try {
+			if (member instanceof Bloomer) {
+				query = "UPDATE BLOOMER SET LEAVEDAY=NULL WHERE EMAIL=?";
+
+				pstmt = con.prepareStatement(query);
+				pstmt.setString(1, member.getEmail());
+				
+				result = pstmt.executeUpdate();
+			} else {
+				query = "UPDATE HONEYBEE SET LEAVEDAY=NULL WHERE EMAIL=?";
+
+				pstmt = con.prepareStatement(query);
+				pstmt.setString(1, member.getEmail());
+
+				result = pstmt.executeUpdate();
+			}
+		} catch (Exception e)
+		{
+				e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
 		return result;
 	}
 }

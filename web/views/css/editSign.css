@@ -28,6 +28,13 @@ button.changeCate
 	margin-left:5%;
 }
 
+button.leave
+{
+	background-color: red;
+	width:25%;
+	margin-left:80%;
+}
+
 /* Extra styles for the cancel button */
 .cancelbtn {
 	padding: 14px 20px;
