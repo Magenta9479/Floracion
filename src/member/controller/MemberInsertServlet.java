@@ -38,7 +38,6 @@ public class MemberInsertServlet extends HttpServlet {
 		Member member=null;
 		
 		String radio=request.getParameter("radio");
-		String id=request.getParameter("id");
 		String pwd=request.getParameter("pwd1");
 		String nick=request.getParameter("nick");
 		String email=request.getParameter("email");
@@ -47,7 +46,6 @@ public class MemberInsertServlet extends HttpServlet {
 		if(radio.equals("B")) 
 		{
 			member=new Bloomer();
-			member.setId(id);
 			member.setPwd(pwd);
 			member.setNick(nick);
 			member.setEmail(email);
@@ -56,7 +54,6 @@ public class MemberInsertServlet extends HttpServlet {
 		else
 		{
 			member=new HoneyBee();
-			member.setId(id);
 			member.setPwd(pwd);
 			member.setNick(nick);
 			member.setEmail(email);
@@ -64,6 +61,7 @@ public class MemberInsertServlet extends HttpServlet {
 		}
 		
 		result=new MemberService().insertMember(member);
+		member=new MemberService().findMember(member.getEmail(), radio);
 	/*	
 		HttpSession session=request.getSession();
 		session.setAttribute("member", member);
@@ -82,5 +80,4 @@ public class MemberInsertServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

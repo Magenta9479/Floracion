@@ -39,10 +39,15 @@ public class MemberEditServlet extends HttpServlet {
 		String email=request.getParameter("email");
 		String psw=request.getParameter("psw");
 		String nick=request.getParameter("nick");
-		String phone=request.getParameter("phone");
+		String phone=request.getParameter("phone");		
 		
 		
 		Member member=(Member)session.getAttribute("member");
+		
+		if(psw.isEmpty()) 
+		{
+			psw=member.getPwd();
+		}
 		
 		if(member==null) 
 		{			

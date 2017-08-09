@@ -26,15 +26,12 @@ public class MemberService
 
 	public Member login(String email, String pwd, String radio)
 	{
-		System.out.println("!!!!");
 		Member member=null;
-		System.out.println("radio in service : "+radio);
 		Connection con=getConnection();
 		
 		member=new MemberDao().login(con,email,pwd,radio);
 		
 		close(con);
-		System.out.println("!!!!");
 		return member;
 	}
 
@@ -75,6 +72,54 @@ public class MemberService
 		Connection con=getConnection();
 		
 		result=new MemberDao().insertCate(con,member,cate1,cate2,cate3);
+		
+		if(result>0)commit(con);
+		else rollback(con);
+		
+		close(con);
+		
+		return result;
+	}
+
+	public int leaveMember(Member member)
+	{
+		int result=0;
+
+		Connection con=getConnection();
+		
+		result=new MemberDao().leaveMember(con,member);
+		
+		if(result>0)commit(con);
+		else rollback(con);
+		
+		close(con);
+		
+		return result;
+	}
+
+	public int choiceLeaveMember(Member member) 
+	{
+		int result=0;
+
+		Connection con=getConnection();
+		
+		result=new MemberDao().choiceLeaveMember(con,member);
+		
+		if(result>0)commit(con);
+		else rollback(con);
+		
+		close(con);
+		
+		return result;
+	}
+
+	public int cancleLeave(Member member)
+	{
+		int result=0;
+
+		Connection con=getConnection();
+		
+		result=new MemberDao().cancleLeave(con,member);
 		
 		if(result>0)commit(con);
 		else rollback(con);

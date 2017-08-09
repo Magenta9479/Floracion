@@ -11,7 +11,7 @@
 			        success:function(data)
 			        {
 			        	alert("카테고리 설정이 완료되었습니다.\nFloracion을 탐험해보세요!!!");
-			        	window.location.href="/Floracion/main.jsp";
+			        	window.location.href="/Floracion/views/Member/editSign.jsp";
 			        	
 			        },
 			        error:function()

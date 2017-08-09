@@ -5,7 +5,8 @@ $(function() {
 		$(':button[name=buttonauth]').click(function() {
 			authFlag=true;
 			authNumber=Math.floor(Math.random()*1000000);
-			
+			$(this).attr('disabled', 'disabled');
+			$(":input[name=email]").prop('readonly','readonly');
 			var email=$(":input[name=email]").val();
 			var auth={"email":email,"number":authNumber};
 			
@@ -19,7 +20,7 @@ $(function() {
 					success:function()
 					{
 						alert(email+"(으)로 인증번호가 전송되었습니다. \n지금부터 3분까지만 회원가입이 가능합니다.\n이메일이 오지 않았다면 잠시 기다리시거나 회원가입을 다시 시도해주세요.");
-						$(this).attr('disabled', 'disabled');
+						
 						dailyMissionTimer();
 						$(':input[name=inputauth]').css('display', 'block');
 						$(':input[name=inputauth]').attr('required', true);

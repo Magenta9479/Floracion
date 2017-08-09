@@ -3,6 +3,8 @@
 <%@ page import="member.vo.*"%>
 <%
 	String email=request.getParameter("email");
+	int login=Integer.parseInt(request.getParameter("login")!=null?request.getParameter("login"):"0");
+	
 	Member member=(Member)session.getAttribute("member");
 	
 	if(session.getAttribute("member")!=null)
@@ -21,7 +23,10 @@
 </head>
 
 <body>
-
+	<%if(login<3){ %>
+	<script>
+		if(<%=login%>!=0) alert("이메일 또는 비밀번호를 확인하세요.\n3회 이상 실패시 정보찾기로 넘어갑니다.\n현재 "+<%=login%>+"번 시도하셨습니다.");
+	</script>
 	<div id="id01" class="modal">
 		<div class="modal-content animate">
 			<div class="imgcontainer"><a id="home" href="/Floracion/main.jsp">Floración</a></div>
@@ -40,7 +45,7 @@
 				<input type="text" placeholder="이메일" name="email" required>
 
 				<input type="password" placeholder="비밀번호" name="pwd" required>
-				<button type="button" class="cancelbtn" name="cancle" onclick=location.replace('/Floracion/main.jsp')>취소</button>
+				<button type="button" class="cancelbtn" name="cancle" onclick="location.replace('/Floracion/main.jsp')">취소</button>
 				<button name="login">로그인</button>				
 			</div>
 
@@ -62,6 +67,10 @@
 
 		</div>
 	</div>
+	<%}else{ %>
+	<meta http-equiv="refresh" content="0;URL='/Floracion/views/Member/findInfo.jsp'">
+	<%} %>
+	
 
 
 
