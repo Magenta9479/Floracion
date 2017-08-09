@@ -108,7 +108,7 @@
             <div class="tab-content">
                 <div id="menu1" class="tab-pane fade in active">
                     <div class="container row center-block">
-                        <a href="/Floracion/views/project/project.jsp">
+                        <a href="/Floracion/pfind?pcode='프로젝트 코드를 가지고 오라'&what='구분자를 가지고 오라'">
                             <div class="col-md-3">
                                 <div class="thumbnail">
                                     <img src="./img/img_1.jpg" alt="Lights" style="width: 100%">

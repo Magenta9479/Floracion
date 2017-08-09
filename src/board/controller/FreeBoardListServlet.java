@@ -18,16 +18,16 @@ import board.service.BoardService;
 import board.vo.Board;
 
 /**
- * Servlet implementation class NoticeListServlet
+ * Servlet implementation class FreeBoardListServlet
  */
-@WebServlet("/nlist")
-public class NoticeListServlet extends HttpServlet {
+@WebServlet("/flist")
+public class FreeBoardListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public NoticeListServlet() {
+    public FreeBoardListServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,7 +42,7 @@ public class NoticeListServlet extends HttpServlet {
 		
 		int page=Integer.parseInt(request.getParameter("page"));
 		
-		ArrayList<Board> list =new  BoardService().noticeList(page);
+		ArrayList<Board> list =new  BoardService().fboardList(page);
 		
 		
 		JSONObject json = new JSONObject();

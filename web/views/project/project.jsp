@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page import="project.vo.Project" %>
+<%
+	Project project=(Project)request.getAttribute("project");
+%>	
+
 <html>
 
 <head>
@@ -102,15 +106,11 @@
 								<th width="10%">조회</th>
 							</tr>
 						</thead>
-						<tbody id="fuck">
-							
+						<tbody id="notice">							
 
 						</tbody>
 					</table>
 				</div>
-
-
-
 
 				<div id="menu2" class="tab-pane fade">
 					<h1>자유게시판</h1>
@@ -124,29 +124,8 @@
 								<th width="10%">조회</th>
 							</tr>
 						</thead>
-						<tbody >
-							<tr>
-								<td>1</td>
-								<td id="title">스타3 언제 발매하나요?</td>
-								<td>스덕</td>
-								<td>17/02/03</td>
-								<td>21</td>
-							<tr>
-							<tr>
-								<td>2</td>
-								<td id="title">###***!!!1000% 수익 보장 완전 무료 정년 45세 보장 1000만원
-									즉시 입금!!!***###</td>
-								<td>쓰레기광고맨</td>
-								<td>17/02/04</td>
-								<td>321</td>
-							<tr>
-							<tr>
-								<td>3</td>
-								<td id="title">스타5 언제 발매하나요?</td>
-								<td>스덕3</td>
-								<td>17/02/03</td>
-								<td>41</td>
-							<tr>
+						<tbody id="fboard">
+							
 						</tbody>
 					</table>
 				</div>

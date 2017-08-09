@@ -1,10 +1,13 @@
 package project.dao;
 
 import static common.JDBCTemplate.close;
+import static common.JDBCTemplate.getConnection;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import member.vo.Bloomer;
 import project.vo.Project;
@@ -63,5 +66,76 @@ public class ProjectDao {
 			close(pstmt);
 		}
 		return PCode;
+	}
+
+	public Project projectFind(Connection con, String pcode, String what)
+	{
+		Project project=null;	
+		PreparedStatement pstmt=null;
+		ResultSet rset1=null;
+		ResultSet rset2=null;
+		String query1=null;
+		String query2=null;
+		
+		if(what.equals("C")) 
+		{
+			query1="SELECT * FROM CONPROJECT WHERE PCODE=?";
+			query2="SELECT * FROM CONBRIEF WHERE PCODE=?";
+		}
+		else if(what.equals("P")) 
+		{
+			query1="SELECT * FROM PLANPROJECT WHERE PCODE=?";
+			query2="SELECT * FROM PLANBRIEF WHERE PCODE=?";
+		}
+		else 
+		{
+			query1="SELECT * FROM ENDPROJECT WHERE PCODE=?";
+			query2="SELECT * FROM ENDBRIEF WHERE PCODE=?";
+		}
+		
+		try 
+		{
+			pstmt=con.prepareStatement(query1);
+			pstmt.setString(1, pcode);
+			
+			rset1=pstmt.executeQuery();
+
+
+			pstmt=con.prepareStatement(query2);
+			pstmt.setString(1, pcode);
+						
+			rset2=pstmt.executeQuery();
+			
+			if(rset1.next()&&rset2.next()) 
+			{
+				project=new Project();
+				project.setPcode(rset1.getString("PCODE"));
+				project.setName(rset1.getString("NAME"));
+				project.setContent(rset1.getString("CONTENT"));
+				project.setStart(rset1.getDate("SDATE"));
+				project.setEnd(rset1.getDate("EDATE"));
+				project.setgMoney(rset1.getInt("GMONEY"));
+				project.setcMoney(rset1.getInt("CMONEY"));
+				project.setPermit(rset1.getString("PERMIT"));
+				project.setLeader(rset1.getString("LEADCODE"));
+				project.setCategory(rset1.getString("CATEGORY"));
+				
+				project.setContent2(rset2.getString("CONTENT"));
+				project.setMainImage(rset2.getString("MAINIMAGE"));
+				project.setImage1(rset2.getString("IMAGE1"));
+				project.setImage2(rset2.getString("IMAGE2"));
+				project.setImage3(rset2.getString("IMAGE3"));
+				project.setImage4(rset2.getString("IMAGE4"));
+				project.setMainVideo(rset2.getString("MAINVIDEO"));
+				project.setVideo1(rset2.getString("VIDEO1"));
+				project.setVideo2(rset2.getString("VIDEO2"));				
+			}
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}	
+		
+		return project;
 	}
 }

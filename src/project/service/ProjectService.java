@@ -12,7 +12,7 @@ public class ProjectService
 	public int insetProject(Project project) {
 		// TODO Auto-generated method stub
 		int result = 0;
-		System.out.println("프로젝트 서비스 접속 성공");
+
 		Connection con = getConnection();
 		
 		result = new ProjectDao().insertProject(con, project);
@@ -28,11 +28,24 @@ public class ProjectService
 	public String getPCode() {
 		// TODO Auto-generated method stub
 		String pCode="";
+		
 		Connection con = getConnection();
 		
 		pCode = new ProjectDao().getPCode(con);
 		
 		return pCode;
+	}
+
+	public Project projectFind(String pcode, String what)
+	{
+		Project project=null;
+		
+		Connection con=getConnection();
+		
+		project=new ProjectDao().projectFind(con,pcode,what);
+		
+		close(con);
+		return project;
 	}
 
 }
