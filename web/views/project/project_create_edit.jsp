@@ -226,6 +226,13 @@
 													<li><a href="#">외국어</a></li>
 													<li><a href="#">악기연주</a></li>
 													<li><a href="#">기타</a></li>
+													<li class="dropdown-header">여행</li>
+													<li><a href="#">배낭여행</a></li>
+													<li><a href="#">패키지여행</a></li>
+													<li><a href="#">역사탐방</a></li>
+													<li><a href="#">맛집기행</a></li>
+													<li><a href="#">여행용품</a></li>
+													<li><a href="#">기타</a></li>
 												</ul>
 											</div>
 										</div>

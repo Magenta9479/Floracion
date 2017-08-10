@@ -36,6 +36,8 @@ public class Project_Main extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8");
 		ArrayList<Project> pbList = new ArrayList<Project>();
 		int num=Integer.parseInt(request.getParameter("num"));
 		

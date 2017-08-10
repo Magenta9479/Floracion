@@ -13,7 +13,7 @@ $(function() {
 			
 			for(var i in json.list){
 				//한글 깨짐을 막기 위해 문자 인코딩 처리한 json 객체의 값은 decodeURIComponent() 로 디코딩 처리함
-				 $("#fuck").append("<tr><td>"+json.list[i].bcode.substring(2)+"</td><td>"+decodeURIComponent(json.list[i].title)+"</td><td>"+json.list[i].writer+"</td><td>"+json.list[i].ndate+"</td><td>10</td></tr>");
+				 $("#notice").append("<tr><td>"+json.list[i].bcode.substring(2)+"</td><td>"+decodeURIComponent(json.list[i].title)+"</td><td>"+json.list[i].writer+"</td><td>"+json.list[i].ndate+"</td><td>10</td></tr>");
 			}			
 		},
 		error:function(){alert("ERROR");}

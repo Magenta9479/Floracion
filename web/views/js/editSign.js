@@ -1,7 +1,7 @@
 $(function() {
 		$('button[name=cancle]').click(function()
 				{
-					location.href="/Floracion/main.jsp";
+					location.href="/Floracion/pmain?num=1";
 				});
 		
 		$('button[name=edit]').click(function()

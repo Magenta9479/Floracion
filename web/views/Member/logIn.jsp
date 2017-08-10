@@ -63,7 +63,7 @@
 										<input type="text" placeholder="이메일" name="email" required>
 										<input type="password" placeholder="비밀번호" name="pwd" required>
 												<button name="login">로그인</button>
-												<button type="button" class="cancelbtn" name="cancle" onclick="location.replace('/Floracion/main.jsp')">취소</button>
+												<button type="button" class="cancelbtn" name="cancle" onclick="location.replace('/Floracion/pmain?num=1')">취소</button>
 									</div>
 
 											<div class="line">
