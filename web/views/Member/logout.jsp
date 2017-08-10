@@ -11,7 +11,7 @@
 		// session을 재시작해서 저장된 정보를 날린다
 		session.invalidate();
 		// 그리고 다시 LOGIN.jsp로 돌아가게 한다
-		response.sendRedirect("/Floracion/main.jsp");
+		response.sendRedirect("/Floracion/pmain?num=1");
 	%>
 </body>
 </html>

@@ -69,7 +69,6 @@ public class Project_create extends HttpServlet {
 		String encType = "UTF-8";
 		MultipartRequest multipartRequest = new MultipartRequest(request, path, maxSize, encType,
 				new DefaultFileRenamePolicy());
-		System.out.println(member);
 		String name = multipartRequest.getParameter("pName");
 		System.out.println(name);
 		String content = multipartRequest.getParameter("pText");
@@ -102,6 +101,9 @@ public class Project_create extends HttpServlet {
 		projectBrief.setMainVideo(pVideo);
 
 		pCode = new ProjectService().getPCode();
+		
+		String mbCode = member.getMbcode();
+		int result3 = new ProjectService().insertParList(pCode,mbCode);
 		
 		result2 = new ProjectBriefService().insertProjectBrief(projectBrief,pCode);
 
