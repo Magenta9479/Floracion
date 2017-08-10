@@ -85,7 +85,7 @@
 					<td>
 						<div class="module"
 							onclick="location.href='./views/category/sub_category.jsp'">
-							<img class="thumb_pics" src="./img/art.png" alt="예술">
+							<img class="thumb_pics" src="./img/art.jpg" alt="예술">
 							<h2>예술</h2>
 						</div>
 					</td>
@@ -157,8 +157,8 @@
 
 					<td>
 						<div class="module">
-							<img class="thumb_pics" src="./img/fashion1.JPG" alt="패션1">
-							<h2>패션1</h2>
+							<img class="thumb_pics" src="./img/travel.jpg" alt="여행">
+							<h2>여행</h2>
 						</div>
 					</td>
 
