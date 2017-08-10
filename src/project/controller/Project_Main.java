@@ -42,7 +42,7 @@ public class Project_Main extends HttpServlet {
 		pbList = new ProjectService().selectList(num);
 
 		RequestDispatcher view = null;
-		view = request.getRequestDispatcher("/main.jsp?id=0");
+		view = request.getRequestDispatcher("/main.jsp");
 
 		request.setAttribute("pbList", pbList);
 		view.forward(request, response);

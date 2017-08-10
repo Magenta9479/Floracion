@@ -60,4 +60,21 @@ public class ProjectService {
 		close(con);
 		return project;
 	}
+
+	public int insertParList(String pCode, String mbCode) {
+		// TODO Auto-generated method stub
+		Connection con = getConnection();
+		int result3 = new ProjectDao().insertParList(con,pCode,mbCode);
+		close(con);
+		return result3;
+	}
+
+	public Boolean selectParList(String mbCode) {
+		// TODO Auto-generated method stub
+		Boolean flag = null;
+		Connection con = getConnection();
+		flag = new ProjectDao().selectParList(con, mbCode);
+		close(con);
+		return flag;
+	}
 }

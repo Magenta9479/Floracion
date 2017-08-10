@@ -12,6 +12,7 @@ import org.json.simple.JSONObject;
 import member.service.MemberService;
 import member.vo.Bloomer;
 import member.vo.Member;
+import project.service.ProjectService;
 
 
 
@@ -44,11 +45,13 @@ public class MemberLoginServlet extends HttpServlet {
 		Member member = new MemberService().login(email, pwd,radio);
 		HttpSession session = request.getSession();
 		if(login>3)login=1;
-		System.out.println("서블릿"+member);
 		if (member != null) {
+			String mbCode = member.getMbcode();
+			Boolean flag = new ProjectService().selectParList(mbCode);
+			member.setFlag(flag);
 			session.setAttribute("member", member);
 			// 메인 페이지가 세션에서 member 객체 퍼가기, bloomer인지 honeybee인지 instanceof로 구분하기
-			response.sendRedirect("/Floracion/main.jsp?id=2");
+			response.sendRedirect("/Floracion/pmain?num=1");
 		} else {
 			response.sendRedirect("/Floracion/views/Member/logIn.jsp?login="+login);
 		}

@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="member.vo.*"%>
+<%String email = request.getParameter("email");
+			Member member = (Member) session.getAttribute("member");
+			Boolean par = false;
+			%>
 <!DOCTYPE html>
 <html>
 
@@ -14,10 +18,7 @@
 			modal.style.display = "none";
 		}
 	}
-<%String email = request.getParameter("email");
-			Member member = (Member) session.getAttribute("member");
-			int num = Integer.parseInt(request.getParameter("id"));
-			System.out.println(num);%>
+
 	
 </script>
 
@@ -74,6 +75,7 @@
 		<%
 			} else {
 				if (member instanceof Bloomer && ((Bloomer) member).getLeader() != null) {
+					par = member.getFlag();
 		%>
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="/Floracion//views/Member/editSign.jsp"> <span
@@ -85,7 +87,7 @@
 		</ul>
 		<%
 			} else {
-					if (num != 1) {
+					if (!par) {
 		%>
 		<ul id="right" class="nav navbar-nav navbar-right">
 			<li><a href="/Floracion/views/project/project_create_edit.jsp"

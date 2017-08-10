@@ -14,7 +14,16 @@ public abstract class Member
 	private String category1;
 	private String category2;
 	private String category3;
-	
+	private Boolean flag;
+
+	public Boolean getFlag() {
+		return flag;
+	}
+
+	public void setFlag(Boolean flag) {
+		this.flag = flag;
+	}
+
 	public Member(){}
 	
 	public Member(String mbcode, String id, String pwd, String nick, String email, String phone, Date enrollDay,

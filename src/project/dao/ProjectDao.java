@@ -192,4 +192,54 @@ public class ProjectDao {
 
 		return project;
 	}
+
+	public int insertParList(Connection con, String pCode, String mbCode) {
+		// TODO Auto-generated method stub
+		int result3 = 0;
+		PreparedStatement pstmt = null;
+		String query = "INSERT INTO PLANPARLIST VALUES(?,?)";
+
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, pCode);
+			pstmt.setString(2, mbCode);
+			result3 = pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("멤버 참여 실패!");
+			e.printStackTrace();
+		} finally {
+			try {
+				close(pstmt);
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return result3;
+	}
+
+	public Boolean selectParList(Connection con, String mbCode) {
+		// TODO Auto-generated method stub
+		Boolean flag = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		String query = "select * from (select * from PLANPARLIST UNION  select * from CONPARLIST) where MCODE=?";
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, mbCode);
+			rset = pstmt.executeQuery();
+			if (rset.next())
+				flag = true;
+			else
+				flag = false;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				close(rset);
+				close(pstmt);
+			} catch (Exception e2) {
+			}
+		}
+		return flag;
+	}
 }
