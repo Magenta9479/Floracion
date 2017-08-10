@@ -7,7 +7,9 @@
 	<%
 	String email=request.getParameter("email");
 	Member member=(Member)session.getAttribute("member");
-
+	
+	int login=Integer.parseInt(request.getParameter("login")!=null?request.getParameter("login"):"100");
+	
 	if(session.getAttribute("member")!=null)
 	{
 		session.invalidate();
@@ -24,6 +26,10 @@
 				modal.style.display = "none";
 			}
 		}
+	</script>
+	
+	<script>
+		if(<%=login%>>0)alert("로그인 실패!!\n로그인을 <%=login%>회 시도하셨습니다.\n3회 초과시 정보찾기로 넘어갑니다.");
 	</script>
 
 	<head>

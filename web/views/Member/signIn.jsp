@@ -9,9 +9,9 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="../css/signin.css" type="text/css">
-<script src="../js/signin.js"></script>
-<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" href="/Floracion/views/css/signin.css" type="text/css">
+<script src="/Floracion/views/js/signin.js"></script>
+<script type="text/javascript" src="/Floracion/views/js/jquery-3.2.1.min.js"></script>
 </head>
 
 <body>

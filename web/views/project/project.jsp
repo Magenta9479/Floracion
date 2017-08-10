@@ -3,6 +3,7 @@
 <%@ page import="project.vo.Project"%>
 <%
 	Project project = (Project) request.getAttribute("project");
+	System.out.println(project);
 %>
 <!DOCTYPE html>
 <html>
