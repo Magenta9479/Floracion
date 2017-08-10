@@ -26,7 +26,7 @@
 <title>Floración: 모두가 함께하는 통합형 프로젝트 크라우드 펀딩.</title>
 </head>
 
-<body style="background-color : #F2ECE9;">
+<body style="background-color: #F2ECE9;">
 	<%@ include file="./header.jsp"%>
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
@@ -83,7 +83,8 @@
 				<tr>
 
 					<td>
-						<div class="module" onclick="location.href='./views/category/sub_category.jsp'">
+						<div class="module"
+							onclick="location.href='./views/category/sub_category.jsp'">
 							<img class="thumb_pics" src="./img/art.png" alt="예술">
 							<h2>예술</h2>
 						</div>
@@ -173,8 +174,7 @@
 	<br>
 	<div id="categoryList">
 		<ul class="nav nav-tabs">
-			<li class="active"><a data-toggle="tab" href="#menu1">최신
-					프로젝트</a></li>
+			<li class="active"><a data-toggle="tab" href="#menu1">최신 프로젝트</a></li>
 			<li><a data-toggle="tab" href="#menu2">인기 프로젝트</a></li>
 			<li><a data-toggle="tab" href="#menu3">마감임박 프로젝트</a></li>
 		</ul>
