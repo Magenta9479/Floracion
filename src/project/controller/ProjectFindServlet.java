@@ -42,7 +42,7 @@ public class ProjectFindServlet extends HttpServlet {
 		Project project = new ProjectService().projectFind(pcode, what);
 
 		if (project != null) {
-			RequestDispatcher view = request.getRequestDispatcher("/Floracion/views/project.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("/views/project/project.jsp");
 			request.setAttribute("project", project);
 			view.forward(request, response);
 		} else {

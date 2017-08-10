@@ -5,9 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>회원정보찾기</title>
-<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
-<link rel="stylesheet" href="../css/login.css" type="text/css">
-<script src="../js/findInfo.js"></script>	
+<script type="text/javascript" src="/Floracion/views/js/jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" href="/Floracion/views/css/login.css" type="text/css">
+<script src="/Floracion/views/js/findInfo.js"></script>	
 </head>
 <body>
 	<div id="id02" class="modal">

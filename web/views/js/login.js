@@ -10,7 +10,7 @@ $(function(){
 			
 			if(!pwd.val()) pwd.css("border-color","red");
 			else pwd.css("border-color","#ccc");
-			console.log(email.val()+"!!"+pwd.val());
+			
 			if(email.val()&&pwd.val())
 			{
 				window.location.href="/Floracion/mlogin?radio="+radio+"&email="+email.val()+"&pwd="+pwd.val();
