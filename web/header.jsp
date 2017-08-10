@@ -15,7 +15,9 @@
 		}
 	}
 <%String email = request.getParameter("email");
-			Member member = (Member) session.getAttribute("member");%>
+			Member member = (Member) session.getAttribute("member");
+			int num = Integer.parseInt(request.getParameter("id"));
+			System.out.println(num);%>
 	
 </script>
 
@@ -36,7 +38,7 @@
 	<div class="container-fluid">
 		<%-- <ul class="nav navbar-nav navbar-left"> --%>
 
-		<a class="navbar-brand" href="/Floracion/main.jsp" id="home_logo">Floración</a>
+		<a class="navbar-brand" href="/Floracion/pmain?num=1" id="home_logo">Floración</a>
 		<ul class="navbar-nav">
 			<li class="nav-item">
 				<div class="input-group">
@@ -53,7 +55,8 @@
 		%>
 
 		<div class="navbar_btn_group">
-			<li class="nav-item"><a href="/Floracion/views/Member/signIn.jsp"> <span
+			<li class="nav-item"><a
+				href="/Floracion/views/Member/signIn.jsp"> <span
 					class="glyphicon glyphicon-user"></span> 회원가입
 			</a></li>
 
@@ -75,8 +78,23 @@
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="/Floracion//views/Member/editSign.jsp"> <span
 					class="glyphicon glyphicon-user"></span> <%=member.getNick()%></a></li>
-			<li><a href='/Floracion/views/Member/logout.jsp' style="width: auto;">
-					<span class="glyphicon glyphicon-log-in"></span> 로그아웃
+			<li><a href='/Floracion/views/Member/logout.jsp'
+				style="width: auto;"> <span class="glyphicon glyphicon-log-in"></span>
+					로그아웃
+			</a></li>
+		</ul>
+		<%
+			} else {
+					if (num != 1) {
+		%>
+		<ul id="right" class="nav navbar-nav navbar-right">
+			<li><a href="/Floracion/views/project/project_create_edit.jsp"
+				class="glyphicon glyphicon-check">프로젝트생성하기</a></li>
+			<li><a href="/Floracion/views/Member/editSign.jsp"> <span
+					class="glyphicon glyphicon-user"></span> <%=member.getNick()%></a></li>
+			<li><a href='/Floracion/views/Member/logout.jsp'
+				style="width: auto;"> <span class="glyphicon glyphicon-log-in"></span>
+					로그아웃
 			</a></li>
 		</ul>
 		<%
@@ -87,12 +105,14 @@
 				class="glyphicon glyphicon-check">프로젝트생성하기</a></li>
 			<li><a href="/Floracion/views/Member/editSign.jsp"> <span
 					class="glyphicon glyphicon-user"></span> <%=member.getNick()%></a></li>
-			<li><a href='/Floracion/views/Member/logout.jsp' style="width: auto;">
-					<span class="glyphicon glyphicon-log-in"></span> 로그아웃
+			<li><a href='/Floracion/views/Member/logout.jsp'
+				style="width: auto;"> <span class="glyphicon glyphicon-log-in"></span>
+					로그아웃
 			</a></li>
 		</ul>
 		<%
 			}
+				}
 			}
 		%>
 

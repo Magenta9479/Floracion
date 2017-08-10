@@ -41,7 +41,6 @@ public class MemberLoginServlet extends HttpServlet {
 		String radio = request.getParameter("radio");
 		String email = request.getParameter("email");
 		String pwd = request.getParameter("pwd");
-		System.out.println(radio+email+pwd);
 		Member member = new MemberService().login(email, pwd,radio);
 		HttpSession session = request.getSession();
 		if(login>3)login=1;
@@ -49,7 +48,7 @@ public class MemberLoginServlet extends HttpServlet {
 		if (member != null) {
 			session.setAttribute("member", member);
 			// 메인 페이지가 세션에서 member 객체 퍼가기, bloomer인지 honeybee인지 instanceof로 구분하기
-			response.sendRedirect("/Floracion/main.jsp");
+			response.sendRedirect("/Floracion/main.jsp?id=2");
 		} else {
 			response.sendRedirect("/Floracion/views/Member/logIn.jsp?login="+login);
 		}

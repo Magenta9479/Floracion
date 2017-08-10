@@ -38,12 +38,11 @@ public class Project_Main extends HttpServlet {
 			throws ServletException, IOException {
 		ArrayList<Project> pbList = new ArrayList<Project>();
 		int num=Integer.parseInt(request.getParameter("num"));
-		System.out.println(num);
 		
 		pbList = new ProjectService().selectList(num);
 
 		RequestDispatcher view = null;
-		view = request.getRequestDispatcher("/main.jsp");
+		view = request.getRequestDispatcher("/main.jsp?id=0");
 
 		request.setAttribute("pbList", pbList);
 		view.forward(request, response);
