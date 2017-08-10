@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="member.vo.*"%>
-<%String email = request.getParameter("email");
-			Member member = (Member) session.getAttribute("member");
-			Boolean par = false;
-			%>
+<%
+	String email = request.getParameter("email");
+	Member member = (Member) session.getAttribute("member");
+	Boolean par = false;
+%>
 <!DOCTYPE html>
 <html>
 
@@ -18,8 +19,6 @@
 			modal.style.display = "none";
 		}
 	}
-
-	
 </script>
 
 <head>
@@ -129,19 +128,32 @@
 					<span
 						onclick="document.getElementById('id01').style.display='none'"
 						class="close" title="Close Modal">&times;</span> <img
-						src="img/user1.JPG" alt="Avatar" class="avatar">
+						src="img/user11.JPG" alt="Avatar" class="avatar">
 				</div>
 
 				<%
 					if (member instanceof HoneyBee) {
 				%>
-				<input type="radio" name="information" value="H" checked>후원자
-				<input type="radio" name="information" value="B">참여자
+				<label class="btn btn-success active"> <input type="radio"
+					name="information" id="option2" value="H" autocomplete="off"
+					checked> <span class="glyphicon glyphicon-ok">후원자</span>
+				</label> <label class="btn btn-primary"> <input type="radio"
+					name="information" id="option1" value="B" autocomplete="off">
+					<span class="glyphicon glyphicon-ok">참여자</span>
+				</label>
+
 				<%
 					} else {
 				%>
-				<input type="radio" name="information" value="H">후원자 <input
-					type="radio" name="information" value="B" checked>참여자
+
+				<label class="btn btn-success active"> <input type="radio"
+					name="information" id="option2" value="H" autocomplete="off"
+					checked> <span class="glyphicon glyphicon-ok">후원자</span>
+				</label> <label class="btn btn-primary"> <input type="radio"
+					name="information" id="option1" value="B" autocomplete="off">
+					<span class="glyphicon glyphicon-ok">참여자</span>
+				</label>
+
 				<%
 					}
 				%>
@@ -162,7 +174,7 @@
 	<script>
 		// Get the modal
 		var modal = document.getElementById('id01');
-
+	
 		// When the user clicks anywhere outside of the modal, close it
 		window.onclick = function(event) {
 			if (event.target == modal) {
