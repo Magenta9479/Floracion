@@ -26,7 +26,7 @@
 <title>Floración: 모두가 함께하는 통합형 프로젝트 크라우드 펀딩.</title>
 </head>
 
-<body>
+<body style="background-color : #F2ECE9;">
 	<%@ include file="./header.jsp"%>
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
@@ -39,19 +39,21 @@
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox">
 			<div class="item active">
-				<img src="./img/main01.jpg" alt="New York">
-				<div class="carousel-caption">
-					<h3>New York</h3>
-					<p>The atmosphere in New York is lorem ipsum.</p>
-				</div>
+
+				<video src="./img/main1.mp4" autoplay loop>
+					<div class="carousel-caption">
+						<h3>
+							“Everything you can imagine is real.” <br>― Pablo Picasso
+						</h3>
+						<h3>
+							“그대가 상상할 수 있는 모든 것이 바로 현실이다.” <br>― 파블로 피카소
+						</h3>
+					</div>
 			</div>
 
 			<div class="item">
-				<img src="./img/main02.jpg" alt="Chicago">
-				<div class="carousel-caption">
-					<h3>Chicago</h3>
-					<p>Thank you, Chicago - A night we won't forget.</p>
-				</div>
+				<img src="./img/main02.jpg" alt="Los Angeles">
+
 			</div>
 
 			<div class="item">
@@ -74,47 +76,97 @@
 		</a>
 	</div>
 
-	<br>
-	<br>
-	<h3>카테고리 목록</h3>
 	<div class="container center-block">
 
 		<div class="row">
 			<table>
 				<tr>
-					<td><a href="./views/category/sub_category.jsp"><img
-							src="./img/art.png" class="img-thumbnail" alt="Cinque Terre"></a>
+
+					<td>
+						<div class="module" onclick="location.href='./views/category/sub_category.jsp'">
+							<img class="thumb_pics" src="./img/art.png" alt="예술">
+							<h2>예술</h2>
+						</div>
 					</td>
-					<td><img src="./img/book.jpg" class="img-thumbnail"
-						alt="Cinque Terre" width="300" height="300"></td>
-					<td><img src="./img/design.jpg" class="img-thumbnail"
-						alt="Cinque Terre" width="300" height="300"></td>
-					<td><img src="./img/fashion.jpg" class="img-thumbnail"
-						alt="Cinque Terre" width="300" height="300"></td>
-					<td><img src="./img/self_improvement.jpg"
-						class="img-thumbnail" alt="Cinque Terre" width="300" height="300"></td>
+
+					<td>
+						<div class="module">
+							<img class="thumb_pics" src="./img/book.jpg" alt="출판">
+							<h2>출판</h2>
+						</div>
+					</td>
+
+					<td>
+						<div class="module">
+							<img class="thumb_pics" src="./img/design.jpg" alt="디자인">
+							<h2>디자인</h2>
+						</div>
+					</td>
+
+					<td>
+						<div class="module">
+							<img class="thumb_pics" src="./img/fashion.jpg" alt="패션">
+							<h2>패션</h2>
+						</div>
+					</td>
+
+					<td>
+						<div class="module">
+							<img class="thumb_pics" src="./img/self_improvement.jpg"
+								alt="자기계발">
+							<h2>자기계발</h2>
+						</div>
+					</td>
+
 				</tr>
 			</table>
 		</div>
-		<br> <br>
+
 		<div class="row">
 			<table>
 				<tr>
-					<td><a href="./views/category/sub_category.jsp"><img
-							src="./img/skill.jpg" class="img-thumbnail" alt="Cinque Terre"
-							width="300" height="300"></a></td>
-					<td><img src="./img/sport.jpg" class="img-thumbnail"
-						alt="Cinque Terre" width="300" height="300"></td>
-					<td><img src="./img/tech.jpg" class="img-thumbnail"
-						alt="Cinque Terre" width="300" height="300"></td>
-					<td><img src="./img/game.jpg" class="img-thumbnail"
-						alt="Cinque Terre" width="300" height="300"></td>
-					<td><img src="./img/fashion1.JPG" class="img-thumbnail"
-						alt="Cinque Terre" width="300" height="300"></td>
+
+					<td>
+						<div class="module">
+							<img class="thumb_pics" src="./img/skill.jpg" alt="전문기술">
+							<h2>전문기술</h2>
+						</div>
+					</td>
+
+					<td>
+						<div class="module">
+							<img class="thumb_pics" src="./img/sport.jpg" alt="스포츠">
+							<h2>스포츠</h2>
+						</div>
+					</td>
+
+					<td>
+						<div class="module">
+							<img class="thumb_pics" src="./img/tech.jpg" alt="기술">
+							<h2>기술</h2>
+						</div>
+					</td>
+
+					<td>
+						<div class="module">
+							<img class="thumb_pics" src="./img/game.jpg" alt="게임">
+							<h2>게임</h2>
+						</div>
+					</td>
+
+					<td>
+						<div class="module">
+							<img class="thumb_pics" src="./img/fashion1.JPG" alt="패션1">
+							<h2>패션1</h2>
+						</div>
+					</td>
+
 				</tr>
 			</table>
 		</div>
 	</div>
+
+
 	<br>
 	<br>
 	<br>
