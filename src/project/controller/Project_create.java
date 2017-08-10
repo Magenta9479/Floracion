@@ -106,7 +106,7 @@ public class Project_create extends HttpServlet {
 		result2 = new ProjectBriefService().insertProjectBrief(projectBrief,pCode);
 
 		if (result != 0 && result2 != 0) {
-			response.sendRedirect("/Floracion/main.jsp");
+			response.sendRedirect("/Floracion/main.jsp?id=1&num=1");
 		} else {
 			System.out.println("실패다!!");
 		}

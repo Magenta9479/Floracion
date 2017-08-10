@@ -141,8 +141,9 @@
 					href="/Floracion/pfind?pcode=<%=pbList.get(i).getPcode()%>&what=<%=pbList.get(i).getWhat()%>">
 					<div class="col-md-3">
 						<div class="thumbnail">
-							<img src="./uploadFile/<%=pbList.get(i).getLeader()%>\\<%=pbList.get(i).getMainImage()%>"
-								alt="Lights" style="width: 100%">
+							<img
+								src="./uploadFile/<%=pbList.get(i).getLeader()%>\\<%=pbList.get(i).getMainImage()%>"
+								alt="Lights" style="width: 100%; height: 30%;">
 							<div class="caption">
 								<a href=""><%=pbList.get(i).getCategory()%></a>
 								<p><%=pbList.get(i).getContent()%></p>
@@ -154,11 +155,12 @@
 								<div class="progress">
 									<div class="progress-bar progress-bar-striped active"
 										role="progressbar" aria-valuenow=<%=goalPercent[i]%>
-										aria-valuemin="0" aria-valuemax="100" style="width: 40%">40%</div>
+										aria-valuemin="0" aria-valuemax="100"
+										style="width: <%=goalPercent[i]%>%"><%=goalPercent[i]%>%
+									</div>
 								</div>
 							</div>
 						</div>
-
 					</div>
 				</a>
 				<%
@@ -172,7 +174,8 @@
 				<a href="/Floracion/views/project/project.jsp">
 					<div class="col-md-3">
 						<div class="thumbnail">
-							<img src="./img/img_1.jpg" alt="Lights" style="width: 100%">
+							<img src="./img/img_1.jpg" alt="Lights"
+								style="width: 100%; height: 30%;">
 							<div class="caption">
 								<a href="">Category</a>
 								<p>Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
@@ -209,9 +212,42 @@
 					href="/Floracion/pfind?pcode=<%=pbList.get(i).getPcode()%>&what=<%=pbList.get(i).getWhat()%>">
 					<div class="col-md-3">
 						<div class="thumbnail">
-							<img src="./uploadFile/"
-								+<%=pbList.get(i).getLeader()%>+"/"+<%=pbList.get(i).getMainImage()%>
-								alt="Lights" style="width: 100%">
+							<img
+								src="./uploadFile/<%=pbList.get(i).getLeader()%>\\<%=pbList.get(i).getMainImage()%>"
+								alt="Lights" style="width: 100%; height: 30%;">
+							<div class="caption">
+								<a href=""><%=pbList.get(i).getCategory()%></a>
+								<p><%=pbList.get(i).getContent()%></p>
+								<h4>
+									&#8361;
+									<%=pbList.get(i).getcMoney()%>원
+								</h4>
+								<h5>일정 :</h5>
+								<div class="progress">
+									<div class="progress-bar progress-bar-striped active"
+										role="progressbar" aria-valuenow=<%=goalPercent[i]%>
+										aria-valuemin="0" aria-valuemax="100" style="width: 40%">40%</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</a>
+				<%
+					}
+				%>
+			</div>
+			<div class="container row center-block">
+				<%
+					for (int i = 0; i < 4; i++) {
+				%>
+				<a
+					href="/Floracion/pfind?pcode=<%=pbList.get(i).getPcode()%>&what=<%=pbList.get(i).getWhat()%>">
+					<div class="col-md-3">
+						<div class="thumbnail">
+							<img
+								src="./uploadFile/<%=pbList.get(i).getLeader()%>\\<%=pbList.get(i).getMainImage()%>"
+								alt="Lights" style="width: 100%; height: 30%;">
 							<div class="caption">
 								<a href=""><%=pbList.get(i).getCategory()%></a>
 								<p><%=pbList.get(i).getContent()%></p>
@@ -235,111 +271,77 @@
 				%>
 			</div>
 		</div>
-	</div>
-	<div class="container row center-block">
-		<%
-			for (int i = 0; i < 4; i++) {
-		%>
-		<a
-			href="/Floracion/pfind?pcode=<%=pbList.get(i).getPcode()%>&what=<%=pbList.get(i).getWhat()%>">
-			<div class="col-md-3">
-				<div class="thumbnail">
-					<img src="./uploadFile/"
-						+<%=pbList.get(i).getLeader()%>+"/"+<%=pbList.get(i).getMainImage()%>
-						alt="Lights" style="width: 100%">
-					<div class="caption">
-						<a href=""><%=pbList.get(i).getCategory()%></a>
-						<p><%=pbList.get(i).getContent()%></p>
-						<h4>
-							&#8361;
-							<%=pbList.get(i).getcMoney()%>원
-						</h4>
-						<h5>일정 :</h5>
-						<div class="progress">
-							<div class="progress-bar progress-bar-striped active"
-								role="progressbar" aria-valuenow=<%=goalPercent[i]%>
-								aria-valuemin="0" aria-valuemax="100" style="width: 40%">40%</div>
+		<div id="menu3" class="tab-pane fade">
+			<div class="container row center-block">
+				<%
+					for (int i = 0; i < 4; i++) {
+				%>
+				<a
+					href="/Floracion/pfind?pcode=<%=pbList.get(i).getPcode()%>&what=<%=pbList.get(i).getWhat()%>">
+					<div class="col-md-3">
+						<div class="thumbnail">
+							<img
+								src="./uploadFile/<%=pbList.get(i).getLeader()%>\\<%=pbList.get(i).getMainImage()%>"
+								alt="Lights" style="width: 100%; height: 30%;">
+							<div class="caption">
+								<a href=""><%=pbList.get(i).getCategory()%></a>
+								<p><%=pbList.get(i).getContent()%></p>
+								<h4>
+									&#8361;
+									<%=pbList.get(i).getcMoney()%>원
+								</h4>
+								<h5>일정 :</h5>
+								<div class="progress">
+									<div class="progress-bar progress-bar-striped active"
+										role="progressbar" aria-valuenow=<%=goalPercent[i]%>
+										aria-valuemin="0" aria-valuemax="100" style="width: 40%">40%</div>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
 
+					</div>
+				</a>
+				<%
+					}
+				%>
 			</div>
-		</a>
-		<%
-			}
-		%>
-	</div>
-	</div>
-	</div>
-	<div id="menu3" class="tab-pane fade">
-		<div class="container row center-block">
-			<%
-				for (int i = 0; i < 4; i++) {
-			%>
-			<a
-				href="/Floracion/pfind?pcode=<%=pbList.get(i).getPcode()%>&what=<%=pbList.get(i).getWhat()%>">
-				<div class="col-md-3">
-					<div class="thumbnail">
-						<img src="./uploadFile/"
-							+<%=pbList.get(i).getLeader()%>+"/"+<%=pbList.get(i).getMainImage()%>
-							alt="Lights" style="width: 100%">
-						<div class="caption">
-							<a href=""><%=pbList.get(i).getCategory()%></a>
-							<p><%=pbList.get(i).getContent()%></p>
-							<h4>
-								&#8361;
-								<%=pbList.get(i).getcMoney()%>원
-							</h4>
-							<h5>일정 :</h5>
-							<div class="progress">
-								<div class="progress-bar progress-bar-striped active"
-									role="progressbar" aria-valuenow=<%=goalPercent[i]%>
-									aria-valuemin="0" aria-valuemax="100" style="width: 40%">40%</div>
+			<div class="container row center-block">
+				<%
+					for (int i = 0; i < 4; i++) {
+				%>
+				<a href="/Floracion/views/project/project.jsp">
+					<div class="col-md-3">
+						<div class="thumbnail">
+							<img src="./img/img_1.jpg" alt="Lights"
+								style="width: 100%; height: 30%;">
+							<div class="caption">
+								<a href="">Category</a>
+								<p>Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
+									ipsum... Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
+									ipsum... Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
+									ipsum... Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
+									ipsum... Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
+									ipsum... Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
+									ipsum... Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
+									ipsum... Lorem ipsum... Lorem ipsum...</p>
+								<h4>&#8361; 100,000원</h4>
+								<h5>일정 :</h5>
+								<div class="progress">
+									<div class="progress-bar progress-bar-striped active"
+										role="progressbar" aria-valuenow="40" aria-valuemin="0"
+										aria-valuemax="100" style="width: 40%">40%</div>
+								</div>
 							</div>
 						</div>
-					</div>
 
-				</div>
-			</a>
-			<%
-				}
-			%>
-		</div>
-		<div class="container row center-block">
-			<%
-				for (int i = 0; i < 4; i++) {
-			%>
-			<a href="/Floracion/views/project/project.jsp">
-				<div class="col-md-3">
-					<div class="thumbnail">
-						<img src="./img/img_1.jpg" alt="Lights" style="width: 100%">
-						<div class="caption">
-							<a href="">Category</a>
-							<p>Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
-								ipsum... Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
-								ipsum... Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
-								ipsum... Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
-								ipsum... Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
-								ipsum... Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
-								ipsum... Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
-								ipsum... Lorem ipsum... Lorem ipsum...</p>
-							<h4>&#8361; 100,000원</h4>
-							<h5>일정 :</h5>
-							<div class="progress">
-								<div class="progress-bar progress-bar-striped active"
-									role="progressbar" aria-valuenow="40" aria-valuemin="0"
-									aria-valuemax="100" style="width: 40%">40%</div>
-							</div>
-						</div>
 					</div>
+				</a>
+				<%
+					}
+				%>
+			</div>
 
-				</div>
-			</a>
-			<%
-				}
-			%>
 		</div>
-	</div>
 	</div>
 
 	<%@ include file="./footer.jsp"%>

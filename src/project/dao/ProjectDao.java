@@ -74,7 +74,6 @@ public class ProjectDao {
 		ResultSet rset = null;
 		Statement stmt = null;
 		String query = null;
-		System.out.println(num);
 		if (num == 1) // 예정 프로젝트
 		{
 			query = "select PLANPROJECT.PCODE,NAME, PLANPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
@@ -88,14 +87,12 @@ public class ProjectDao {
 			query = "select ENDPROJECT.PCODE,NAME, ENDPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE,LEADCODE, CATEGORY "
 					+ "FROM ENDPROJECT " + "INNER JOIN ENDBRIEF " + "ON ENDPROJECT.PCODE = ENDBRIEF.PCODE";
 		}
-		System.out.println(query);
 		try {
 
 			stmt = con.createStatement();
 			rset = stmt.executeQuery(query);
 
 			while (rset.next()) {
-				System.out.println("들어옴");
 				project = new Project();
 				project.setPcode(rset.getString("PCODE"));
 				project.setName(rset.getString("NAME"));
@@ -104,7 +101,6 @@ public class ProjectDao {
 				project.setgMoney(rset.getInt("GMONEY"));
 				project.setMainImage(rset.getString("MAINIMAGE"));
 				project.setLeader(rset.getString("LEADCODE"));
-				System.out.println(rset.getString("LEADCODE"));
 				project.setCategory(rset.getString("CATEGORY"));
 
 				if (num == 1) // 예정 프로젝트
