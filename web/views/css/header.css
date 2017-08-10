@@ -136,6 +136,13 @@ input[type=text]:focus, input[type=password]:focus {
   padding-top: 16px;
 }
 
+/*.modal .btn span.glyphicon {
+	opacity: 0;
+}
+
+.modal .btn.active span.glyphicon {
+	opacity: 1;
+}*/
 
 
 /* The Modal (background) */
