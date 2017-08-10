@@ -62,7 +62,7 @@ public class MemberEditServlet extends HttpServlet {
 		
 		if(result>0) 
 		{
-			response.sendRedirect("/Floracion/views/Member/logIn.jsp?email="+email);
+			response.sendRedirect("/Floracion/views/Member/logIn.jsp?email="+email+"&login=0");
 		}
 	}
 

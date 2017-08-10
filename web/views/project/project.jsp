@@ -3,7 +3,7 @@
 <%@ page import="project.vo.Project"%>
 <%
 	Project project = (Project) request.getAttribute("project");
-	System.out.println(project);
+	int image=Integer.parseInt(project.getLeader().substring(1))-1;
 %>
 <!DOCTYPE html>
 <html>
@@ -48,7 +48,7 @@
 						</div>
 
 						<div class="item">
-							<img src="../../img/pjt_detail1.jpg">
+							<img src="/Floracion/uploadFile/<%=project.getLeader()%>/<%=image%>.jpg">
 						</div>
 
 						<div class="item">

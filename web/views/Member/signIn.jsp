@@ -37,7 +37,7 @@
 				</p>
 
 				<div class="clearfix">
-					<button type="button" class="cancelbtn" name="cancle" onclick="location.replace('/Floracion/main.jsp')">취소</button>
+					<button type="button" class="cancelbtn" name="cancle" onclick="location.replace('/Floracion/pmain?num=1')">취소</button>
 					<button type="submit" class="signupbtn" name="signup">회원가입</button>
 				</div>
 

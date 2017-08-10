@@ -1,5 +1,7 @@
 $(function(){	
 		
+		
+	
 		$(':button[name=login]').click(function(){	
 			var radio=$(":input:radio[name=information]:checked").val();
 			var email=$(":input[name=email]");

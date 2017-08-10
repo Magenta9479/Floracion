@@ -77,4 +77,14 @@ public class ProjectService {
 		close(con);
 		return flag;
 	}
+
+	public ArrayList<Project> selectCatList(int num, int num2) {
+		ArrayList<Project> pbList = null;
+		Connection con = getConnection();
+
+		pbList = new ProjectDao().selectCatList(con,num,num2);
+		close(con);
+
+		return pbList;
+	}
 }

@@ -242,4 +242,169 @@ public class ProjectDao {
 		}
 		return flag;
 	}
+
+	public ArrayList<Project> selectCatList(Connection con, int num, int num2) {
+		ArrayList<Project> pbList = new ArrayList<Project>();
+		Project project = null;
+		ResultSet rset = null;
+		Statement stmt = null;
+		String query = null;
+		if (num == 1) // 예정 프로젝트
+		{
+			switch (num2) {
+			case 1:
+				query = "select PLANPROJECT.PCODE,NAME, PLANPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
+						+ "FROM PLANPROJECT " + "INNER JOIN PLANBRIEF " + "ON PLANPROJECT.PCODE = PLANBRIEF.PCODE "
+						+ "where PLANPROJECT.CATEGORY IN('공공예술','행위예술','조각','회화','공연','영상','기타','예술')";
+				break;
+			case 2:
+				query = "select PLANPROJECT.PCODE,NAME, PLANPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
+						+ "FROM PLANPROJECT " + "INNER JOIN PLANBRIEF " + "ON PLANPROJECT.PCODE = PLANBRIEF.PCODE "
+						+ "where PLANPROJECT.CATEGORY IN('학습','어린이','소설','비소설','외서','시','팟캐스트','수험서','기타','출판')";
+				break;
+			case 3:
+				query = "select PLANPROJECT.PCODE,NAME, PLANPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
+						+ "FROM PLANPROJECT " + "INNER JOIN PLANBRIEF " + "ON PLANPROJECT.PCODE = PLANBRIEF.PCODE "
+						+ "where PLANPROJECT.CATEGORY IN('디자인','인테리어','캘리그라피','설계','제품','조경','기타')";
+				break;
+			case 4:
+				query = "select PLANPROJECT.PCODE,NAME, PLANPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
+						+ "FROM PLANPROJECT " + "INNER JOIN PLANBRIEF " + "ON PLANPROJECT.PCODE = PLANBRIEF.PCODE "
+						+ "where PLANPROJECT.CATEGORY IN('패션','악세사리','의류','신발','스포츠웨어','유아','기타')";
+				break;
+			case 5:
+				query = "select PLANPROJECT.PCODE,NAME, PLANPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
+						+ "FROM PLANPROJECT " + "INNER JOIN PLANBRIEF " + "ON PLANPROJECT.PCODE = PLANBRIEF.PCODE "
+						+ "where PLANPROJECT.CATEGORY IN('자기계발','자격증','스터디','토론','외국어','악기연주','기타')";
+				break;
+			case 6:
+				query = "select PLANPROJECT.PCODE,NAME, PLANPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
+						+ "FROM PLANPROJECT " + "INNER JOIN PLANBRIEF " + "ON PLANPROJECT.PCODE = PLANBRIEF.PCODE "
+						+ "where PLANPROJECT.CATEGORY IN('전문기술','타투','가죽세공','보석세공','전통기술','양조','기타')";
+				break;
+			case 7:
+				query = "select PLANPROJECT.PCODE,NAME, PLANPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
+						+ "FROM PLANPROJECT " + "INNER JOIN PLANBRIEF " + "ON PLANPROJECT.PCODE = PLANBRIEF.PCODE "
+						+ "where PLANPROJECT.CATEGORY IN('운동','다이어트','보더빌딩','요가','운동기구','자전거','대회','러닝','하이킹','워터스포츠','기타')";
+				break;
+			case 8:
+				query = "select PLANPROJECT.PCODE,NAME, PLANPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
+						+ "FROM PLANPROJECT " + "INNER JOIN PLANBRIEF " + "ON PLANPROJECT.PCODE = PLANBRIEF.PCODE "
+						+ "where PLANPROJECT.CATEGORY IN('기술','3D프린트','DIY','IoT','VR','로봇','웨어러블','하드웨어','워크샵','박람회','기타')";
+				break;
+			case 9:
+				query = "select PLANPROJECT.PCODE,NAME, PLANPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
+						+ "FROM PLANPROJECT " + "INNER JOIN PLANBRIEF " + "ON PLANPROJECT.PCODE = PLANBRIEF.PCODE "
+						+ "where PLANPROJECT.CATEGORY IN('게임','온라인게임','모바일게임','게임기','보드게임','기타')";
+				break;
+			case 10:
+				query = "select PLANPROJECT.PCODE,NAME, PLANPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
+						+ "FROM PLANPROJECT " + "INNER JOIN PLANBRIEF " + "ON PLANPROJECT.PCODE = PLANBRIEF.PCODE "
+						+ "where PLANPROJECT.CATEGORY IN('여행','배낭여행','패키지여행','역사탐방','맛집기행','여행용품','기타')";
+				break;
+			}
+		} else if (num == 2) // 진행 프로젝트
+		{
+			switch (num2) {
+			case 1:
+				query = "select CONPROJECT.PCODE,NAME, CONPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
+						+ "FROM CONPROJECT " + "INNER JOIN CONBRIEF " + "ON CONPROJECT.PCODE = CONBRIEF.PCODE "
+						+ "where CONPROJECT.CATEGORY IN('공공예술','행위예술','조각','회화','공연','영상','기타','예술')";
+				break;
+			case 2:
+				query = "select CONPROJECT.PCODE,NAME, CONPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
+						+ "FROM CONPROJECT " + "INNER JOIN CONBRIEF " + "ON CONPROJECT.PCODE = CONBRIEF.PCODE "
+						+ "where CONPROJECT.CATEGORY IN('학습','어린이','소설','비소설','외서','시','팟캐스트','수험서','기타','출판')";
+				break;
+			case 3:
+				query = "select CONPROJECT.PCODE,NAME, CONPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
+						+ "FROM CONPROJECT " + "INNER JOIN CONBRIEF " + "ON CONPROJECT.PCODE = CONBRIEF.PCODE "
+						+ "where CONPROJECT.CATEGORY IN('디자인','인테리어','캘리그라피','설계','제품','조경','기타')";
+				break;
+			case 4:
+				query = "select CONPROJECT.PCODE,NAME, CONPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
+						+ "FROM CONPROJECT " + "INNER JOIN CONBRIEF " + "ON CONPROJECT.PCODE = CONBRIEF.PCODE "
+						+ "where CONPROJECT.CATEGORY IN('패션','악세사리','의류','신발','스포츠웨어','유아','기타')";
+				break;
+			case 5:
+				query = "select CONPROJECT.PCODE,NAME, CONPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
+						+ "FROM CONPROJECT " + "INNER JOIN CONBRIEF " + "ON CONPROJECT.PCODE = CONBRIEF.PCODE "
+						+ "where CONPROJECT.CATEGORY IN('자기계발','자격증','스터디','토론','외국어','악기연주','기타')";
+				break;
+			case 6:
+				query = "select CONPROJECT.PCODE,NAME, CONPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
+						+ "FROM CONPROJECT " + "INNER JOIN CONBRIEF " + "ON CONPROJECT.PCODE = CONBRIEF.PCODE "
+						+ "where CONPROJECT.CATEGORY IN('전문기술','타투','가죽세공','보석세공','전통기술','양조','기타')";
+				break;
+			case 7:
+				query = "select CONPROJECT.PCODE,NAME, CONPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
+						+ "FROM CONPROJECT " + "INNER JOIN CONBRIEF " + "ON CONPROJECT.PCODE = CONBRIEF.PCODE "
+						+ "where CONPROJECT.CATEGORY IN('운동','다이어트','보더빌딩','요가','운동기구','자전거','대회','러닝','하이킹','워터스포츠','기타')";
+				break;
+			case 8:
+				query = "select CONPROJECT.PCODE,NAME, CONPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
+						+ "FROM CONPROJECT " + "INNER JOIN CONBRIEF " + "ON CONPROJECT.PCODE = CONBRIEF.PCODE "
+						+ "where CONPROJECT.CATEGORY IN('기술','3D프린트','DIY','IoT','VR','로봇','웨어러블','하드웨어','워크샵','박람회','기타')";
+				break;
+			case 9:
+				query = "select CONPROJECT.PCODE,NAME, CONPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
+						+ "FROM CONPROJECT " + "INNER JOIN CONBRIEF " + "ON CONPROJECT.PCODE = CONBRIEF.PCODE "
+						+ "where CONPROJECT.CATEGORY IN('게임','온라인게임','모바일게임','게임기','보드게임','기타')";
+				break;
+			case 10:
+				query = "select CONPROJECT.PCODE,NAME, CONPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE, LEADCODE, CATEGORY "
+						+ "FROM CONPROJECT " + "INNER JOIN CONBRIEF " + "ON CONPROJECT.PCODE = CONBRIEF.PCODE "
+						+ "where CONPROJECT.CATEGORY IN('여행','배낭여행','패키지여행','역사탐방','맛집기행','여행용품','기타')";
+				break;
+			}
+		} else // 종료 프로젝트
+		{
+			query = "select ENDPROJECT.PCODE,NAME, ENDPROJECT.CONTENT, CMONEY,GMONEY,MAINIMAGE,LEADCODE, CATEGORY "
+					+ "FROM ENDPROJECT " + "INNER JOIN ENDBRIEF " + "ON ENDPROJECT.PCODE = ENDBRIEF.PCODE";
+		}
+		try {
+
+			stmt = con.createStatement();
+			rset = stmt.executeQuery(query);
+
+			while (rset.next()) {
+				project = new Project();
+				project.setPcode(rset.getString("PCODE"));
+				project.setName(rset.getString("NAME"));
+				project.setContent(rset.getString("CONTENT"));
+				project.setcMoney(rset.getInt("CMONEY"));
+				project.setgMoney(rset.getInt("GMONEY"));
+				project.setMainImage(rset.getString("MAINIMAGE"));
+				project.setLeader(rset.getString("LEADCODE"));
+				project.setCategory(rset.getString("CATEGORY"));
+
+				if (num == 1) // 예정 프로젝트
+				{
+					project.setWhat("P");
+				} else if (num == 2) // 진행 프로젝트
+				{
+					project.setWhat("C");
+				} else // 종료 프로젝트
+				{
+					project.setWhat("E");
+				}
+
+				pbList.add(project);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// rset.close();
+				close(rset);
+				// stmt.close();
+				close(stmt);
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		}
+		return pbList;
+	}
 }

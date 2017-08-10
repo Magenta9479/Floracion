@@ -113,7 +113,7 @@ $(function() {
 							}
 							else
 							{
-								window.location.href="../Member/memberCate.jsp";
+								window.location.href="/Floracion/views/Member/memberCate.jsp";
 							}
 						},
 						error:function(isFail)

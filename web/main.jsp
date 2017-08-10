@@ -9,7 +9,6 @@
 	for (int i = 0; i < pbList.size(); i++) {
 		goalPercent[i] = pbList.get(i).getcMoney() / (pbList.get(i).getgMoney() / 100);
 	}
-	System.out.println(pbList.get(0).getLeader());
 %>
 <html>
 
@@ -84,35 +83,39 @@
 
 					<td>
 						<div class="module"
-							onclick="location.href='./views/category/sub_category.jsp'">
+							onclick="location.href='/Floracion/cservlet?num=1'">
 							<img class="thumb_pics" src="./img/art.jpg" alt="예술">
 							<h2>예술</h2>
 						</div>
 					</td>
 
 					<td>
-						<div class="module">
+						<div class="module"
+							onclick="location.href='/Floracion/cservlet?num=2'">
 							<img class="thumb_pics" src="./img/book.jpg" alt="출판">
 							<h2>출판</h2>
 						</div>
 					</td>
 
 					<td>
-						<div class="module">
+						<div class="module"
+							onclick="location.href='/Floracion/cservlet?num=3'">
 							<img class="thumb_pics" src="./img/design.jpg" alt="디자인">
 							<h2>디자인</h2>
 						</div>
 					</td>
 
 					<td>
-						<div class="module">
+						<div class="module"
+							onclick="location.href='/Floracion/cservlet?num=4'">
 							<img class="thumb_pics" src="./img/fashion.jpg" alt="패션">
 							<h2>패션</h2>
 						</div>
 					</td>
 
 					<td>
-						<div class="module">
+						<div class="module"
+							onclick="location.href='/Floracion/cservlet?num=5'">
 							<img class="thumb_pics" src="./img/self_improvement.jpg"
 								alt="자기계발">
 							<h2>자기계발</h2>
@@ -128,35 +131,40 @@
 				<tr>
 
 					<td>
-						<div class="module">
+						<div class="module"
+							onclick="location.href='/Floracion/cservlet?num=6'">
 							<img class="thumb_pics" src="./img/skill.jpg" alt="전문기술">
 							<h2>전문기술</h2>
 						</div>
 					</td>
 
 					<td>
-						<div class="module">
+						<div class="module"
+							onclick="location.href='/Floracion/cservlet?num=7'">
 							<img class="thumb_pics" src="./img/sport.jpg" alt="스포츠">
 							<h2>스포츠</h2>
 						</div>
 					</td>
 
 					<td>
-						<div class="module">
+						<div class="module"
+							onclick="location.href='/Floracion/cservlet?num=8'">
 							<img class="thumb_pics" src="./img/tech.jpg" alt="기술">
 							<h2>기술</h2>
 						</div>
 					</td>
 
 					<td>
-						<div class="module">
+						<div class="module"
+							onclick="location.href='/Floracion/cservlet?num=9'">
 							<img class="thumb_pics" src="./img/game.jpg" alt="게임">
 							<h2>게임</h2>
 						</div>
 					</td>
 
 					<td>
-						<div class="module">
+						<div class="module"
+							onclick="location.href='/Floracion/cservlet?num=10'">
 							<img class="thumb_pics" src="./img/travel.jpg" alt="여행">
 							<h2>여행</h2>
 						</div>
@@ -174,7 +182,8 @@
 	<br>
 	<div id="categoryList">
 		<ul class="nav nav-tabs">
-			<li class="active"><a data-toggle="tab" href="#menu1">최신 프로젝트</a></li>
+			<li class="active"><a data-toggle="tab" href="#menu1">최신
+					프로젝트</a></li>
 			<li><a data-toggle="tab" href="#menu2">인기 프로젝트</a></li>
 			<li><a data-toggle="tab" href="#menu3">마감임박 프로젝트</a></li>
 		</ul>
@@ -221,33 +230,32 @@
 			</div>
 			<div class="container row center-block">
 				<%
-					for (int i = 0; i < 4; i++) {
+					for (int i = 4; i < 8; i++) {
 				%>
-				<a href="/Floracion/views/project/project.jsp">
+				<a
+					href="/Floracion/pfind?pcode=<%=pbList.get(i).getPcode()%>&what=<%=pbList.get(i).getWhat()%>">
 					<div class="col-md-3">
 						<div class="thumbnail">
-							<img src="./img/img_1.jpg" alt="Lights"
-								style="width: 100%; height: 30%;">
+							<img
+								src="./uploadFile/<%=pbList.get(i).getLeader()%>\\<%=pbList.get(i).getMainImage()%>"
+								alt="Lights" style="width: 100%; height: 30%;">
 							<div class="caption">
-								<a href="">Category</a>
-								<p>Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
-									ipsum... Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
-									ipsum... Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
-									ipsum... Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
-									ipsum... Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
-									ipsum... Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
-									ipsum... Lorem ipsum... Lorem ipsum... Lorem ipsum... Lorem
-									ipsum... Lorem ipsum... Lorem ipsum...</p>
-								<h4>&#8361; 100,000원</h4>
+								<a href=""><%=pbList.get(i).getCategory()%></a>
+								<p><%=pbList.get(i).getContent()%></p>
+								<h4>
+									&#8361;
+									<%=pbList.get(i).getcMoney()%>원
+								</h4>
 								<h5>일정 :</h5>
 								<div class="progress">
 									<div class="progress-bar progress-bar-striped active"
-										role="progressbar" aria-valuenow="40" aria-valuemin="0"
-										aria-valuemax="100" style="width: 40%">40%</div>
+										role="progressbar" aria-valuenow=<%=goalPercent[i]%>
+										aria-valuemin="0" aria-valuemax="100"
+										style="width: <%=goalPercent[i]%>%"><%=goalPercent[i]%>%
+									</div>
 								</div>
 							</div>
 						</div>
-
 					</div>
 				</a>
 				<%
