@@ -68,7 +68,7 @@ td a{
 {
     width: 230px;
     height:230px;
-    filter: brightness(75%);
+    filter: brightness(80%);
 }
 
 
@@ -91,7 +91,7 @@ td a{
   font-family: 'Nanum Gothic Coding', serif;
   font-size: 20px;
   font-weight: bold;
-  background-color:rgba(0,0,0,0.8);
+  background-color:rgba(0,0,0,0.7);
   border: 1px white solid;
   padding: 10px;
   text-align: center;
